@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unnati</title>
+	<meta charset="utf-8">
+	<meta name="Job Protal">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+
+
+</style>
+
+<body onload="WebsiteLoader()" style="margin:0;">
+
+
+	<div id="loader"></div>
+	<div style="display:none;" id="myDiv" class="animate-bottom"></div>
+
+	<div class="nav"> 
+		<div class="container">
+			<a href="index.html">Unnati</a>
+			<!--div class="nav-medium" style="float: right;font-size: 12px; float: right; padding-top: 16px;"-->
+				<div class="nav-medium" id="myNavmedium">
+  					<a href="#how IT WORKS">HOW IT WORKS</a>
+					<a href="#ABOUT">ABOUT US</a>
+					<a href="signup.html"><span class="glyphicon glyphicon-log-in">&nbsp</span>SIGN UP</a>
+					<a href="login.html"><span class="glyphicon glyphicon-log-in">&nbsp</span>LOGIN</button></a>
+					<a href="javascript:void(0);" class="icon" onclick="myNavigation()">&#9776;</a>
+				</div>
+			
+		</div>
+	</div>
+
+
+	<div class="slider">
+			<img src="banner.jpg">
+	</div>
+
+	<div class="section">
+		<div class="container">
+			<h2>Work With Someone perfect for You</h2>
+  			<div class="categories">
+	  			<div class="well">Basic Well</div>
+	  			<div class="well">Basic Well</div>
+	  			<div class="well">Basic Well</div>
+	  			<div class="well">Basic Well</div>
+	  			<div class="well">Basic Well</div>
+	  			<div class="well">Basic Well</div>
+	  			<div class="well">Basic Well</div>
+				<div class="well">Basic Well</div>
+			</div>
+		</div>
+	</div> 
+
+	<div class="footer">
+		<div class="container">
+			<hr>
+				
+				<div class="social-link">
+
+					<h3 class="fa fa-text">Follow Us :</h3>
+					<a href="#" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-google"></a>
+					<a href="#" class="fa fa-linkedin"></a>
+				</div>
+			<hr>
+
+			<div class="rights">
+				<h6>Some Contains are copied &copy 2017</h6>
+			</div>
+		</div>
+	</div>	
+</body>
+<script>
+	var myVar;
+
+	function WebsiteLoader() {
+	    myVar = setTimeout(showPage, 0005);
+	}
+
+	function showPage() {
+	  document.getElementById("loader").style.display = "none";
+	  document.getElementById("myDiv").style.display = "block";
+	}
+
+	function myNavigation() {
+    var x = document.getElementById("myNavmedium");
+    if (x.className === "nav-medium") {
+        x.className += " responsive";
+    } else {
+        x.className = "nav-medium";
+    }
+
+    // Get the modal
+	var modal = document.getElementById('id01');
+
+	// When the user clicks anywhere outside of the modal, close it
+	window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+    }
+	}
+}
+</script>
+</html>

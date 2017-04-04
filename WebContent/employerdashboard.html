@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Unnati</title>
+	<meta charset="utf-8">
+	<meta name="Job Protal">
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<style>
+
+</style>
+
+<body>
+
+	<div class="top-header">
+		<div class="container">
+			<h2 style="float: left;">Unnati</h2>
+			<a href="#logout.html" style="float: right;padding-top: 12px;"><span class="glyphicon glyphicon-log-out"></span>&nbsp</span>LOGOUT</a>
+		</div>
+	</div>
+	
+	<div class="institute-nav"> 
+		<div class="container">
+		    <hr>
+		    <div class="tab">
+				<button class="tablinks" onclick="openCategory(event, 'profile')" id="defaultOpen">PROFILE</button>
+				<button class="tablinks" onclick="openCategory(event, 'searchLabour')">SEARCH LABOUR</button>
+				<button class="tablinks" onclick="openCategory(event, 'viewLabour')">VIEW LABOUR</button>
+			</div>	
+
+			<div id="searchLabour" class="tabcontent">
+				<form>
+					<table border="1">
+						<tr>
+							<td>
+								<h4>Name : </h4>
+							</td>
+							<td>
+								<input type="text" name="labname">
+							</td>
+						</tr>
+					</table>
+				</form>
+			</div>
+
+			<div id="viewLabour" class="tabcontent">
+			  
+			</div>
+
+			<div id="profile" class="tabcontent">
+				<h1>Profile</h1>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="footer">
+		<div class="container">
+			<hr>
+				
+				<div class="social-link">
+
+					<h3 class="fa fa-text">Follow Us :</h3>
+					<a href="#" class="fa fa-facebook"></a>
+					<a href="#" class="fa fa-twitter"></a>
+					<a href="#" class="fa fa-google"></a>
+					<a href="#" class="fa fa-linkedin"></a>
+				</div>
+			<hr>
+
+			<div class="rights">
+				<h6>Some Contains are copied &copy 2017</h6>
+			</div>
+		</div>
+	</div>	
+</body>
+<script>
+	
+
+
+
+
+
+
+
+	function openCategory(evt, optionTag) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tabcontent");
+    for (i = 0; i < tabcontent.length; i++) {
+        tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("tablinks");
+    for (i = 0; i < tablinks.length; i++) {
+        tablinks[i].className = tablinks[i].className.replace(" active", "");
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(optionTag).style.display = "block";
+    evt.currentTarget.className += " active";
+	}
+
+	// Get the element with id="defaultOpen" and click on it
+	document.getElementById("defaultOpen").click();
+
+</script>
+</html>
