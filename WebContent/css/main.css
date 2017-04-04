@@ -101,11 +101,21 @@
 	padding-top: 20px;
 }
 .section .well{
-	width: 270px;
-    height: 154px;
+	      width: 368px;
+    height: 236px;
     float: left;
     margin-bottom: 0px;
     border-radius: 0px;
+    padding: 4px;
+}
+
+.section .well img {
+  width: 358px;
+    height: 186px;
+}
+
+.section .well h4 {
+  text-align: center;
 }
 
 .footer{
@@ -182,7 +192,11 @@
     padding-bottom: 60px;
     text-align: center;
 }
-
+@media screen and (max-width: 548px) {
+  .login-section {
+    padding-top: 0px;
+  }
+}
 .login-section .container h2 {
 	font-size: 46px;
     font-family: initial;
@@ -197,10 +211,15 @@
 	  width: 444px;
     height: 40px;
     padding: 2px 12px;
-    margin: 12px;
+    margin: 12px 12px;
     display: inline;
 }
-
+@media screen and (max-width: 548px) {
+  .login-section form input {
+    width: 224px;
+    margin: 12px 0px;
+  }  
+}
 .login-section form input:hover {
    border-color: #4CAF50;
 }
@@ -216,7 +235,6 @@
     font-size: 16px;
     margin: 4px 2px;
     cursor: pointer;
-    -webkit-transition-duration: 0.4s; /* Safari */
     transition-duration: 0.4s;
 }
 
@@ -232,13 +250,20 @@
 /* --------------------------------------- SIGN UP PAGE ----------------------------------------------*/
 
 .signup-section {
-	padding-top: 100px;
+	  padding-top: 100px;
     text-align: center;
     background-color: #f9f9f9;
     height: 500px;
 }
+@media screen and (max-width: 548px) {
+  .signup-section {
+    padding-top: 54px;
+    height: 600px;
+}
+
+}
 .signup-button {
-        border-radius: 4px;
+    border-radius: 4px;
     background-color: darkred;
     border: none;
     color: #FFFFFF;
