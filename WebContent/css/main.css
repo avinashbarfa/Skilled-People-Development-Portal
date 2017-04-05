@@ -94,7 +94,7 @@
 .section h2{
 	text-align: center;
     padding-top: 30px;
-    font-family: cursive;
+    font-family: initial;
     font-size: 46px;
 }
 .section .categories{
@@ -168,15 +168,15 @@
 /* --------------------------------------- LOGIN PAGE ----------------------------------------------*/
 
 .top-header a {
-   	float: right;
+   	
     display: block;
     text-align: center;
-    padding: 14px 16px;
     text-decoration: none;
     font-size: 14px;
     color: gray;
     font-family: serif;
     font-weight: 600;
+
     
 }
 .top-header a:hover{
