@@ -20,7 +20,7 @@
 	</div>
 
 	<div class="login-section">
-		<form>
+		<form action="Login" method="POST">
 			<div class="container">
 				<h2>Login And Get To Work</h2>
 				<table style="margin: 33px 348px">
@@ -30,8 +30,8 @@
 						</th>
 						<th>
 							<select name="login-as" style="width: 348px">
-								<option value="">Company</option>
-								<option value="">ITI</option>
+								<option value="Company">Company</option>
+								<option value="ITI">ITI</option>
 							</select>
 						<th>
 					</tr>
@@ -39,7 +39,6 @@
 				
   				<input type="text" name="uname" placeholder="Enter Username" required="required"><br>
 				<input type="password" name="passwd" placeholder="Enter Password" required="required"><br>
-				
 				<button class="loginbutton" type="submit" >Log In</button><br>
 			</div>	
 		</form>		
