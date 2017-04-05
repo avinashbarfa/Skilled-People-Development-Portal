@@ -48,7 +48,7 @@ public class Login extends HttpServlet {
 			}
 		} else if (option.equals("ITI")) {
 			if (TLoginValidate.validate(uname, password)) {
-				RequestDispatcher rd = request.getRequestDispatcher("index.html");
+				RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
 				rd.include(request, response);
 			} else {
 				out.println("Sorry username or password error");
