@@ -1,2 +1,0 @@
-# SPEP
-Online Job Portal
