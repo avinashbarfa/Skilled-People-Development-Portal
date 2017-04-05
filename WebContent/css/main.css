@@ -206,8 +206,10 @@
 .login-section form {
 	padding: 44px;
 }
-
-.login-section form input {
+.login-section form input[type=radio] {
+  width: 18px;
+}
+.login-section form input{
 	  width: 444px;
     height: 40px;
     padding: 2px 12px;
