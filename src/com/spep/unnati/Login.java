@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class Login
@@ -39,21 +40,25 @@ public class Login extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		if (option.equals("Company")) {
 			if (ELoginValidate.validate(uname, password)) {
+				HttpSession session = request.getSession();
+				session.setAttribute("username", uname);
 				RequestDispatcher rd = request.getRequestDispatcher("employerdashboard.html");
-				rd.include(request, response);
+				rd.forward(request, response);
 			} else {
 				out.println("Sorry username or password error");
 				RequestDispatcher rd = request.getRequestDispatcher("login.html");
-				rd.include(request, response);
+				rd.forward(request, response);
 			}
 		} else if (option.equals("ITI")) {
 			if (TLoginValidate.validate(uname, password)) {
+				HttpSession session = request.getSession();
+				session.setAttribute("username", uname);
 				RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
-				rd.include(request, response);
+				rd.forward(request, response);
 			} else {
 				out.println("Sorry username or password error");
 				RequestDispatcher rd = request.getRequestDispatcher("login.html");
-				rd.include(request, response);
+				rd.forward(request, response);
 			}
 		}
 		out.close();
