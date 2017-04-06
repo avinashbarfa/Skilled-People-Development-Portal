@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 package com.spep.unnati;
 
 import java.io.IOException;
