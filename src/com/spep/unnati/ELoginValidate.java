@@ -13,8 +13,8 @@ public class ELoginValidate {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://appuscorpion.me:3306/alognew", "root",
-					"scorpion");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alognew", "root",
+					"root");
 			PreparedStatement ps = conn
 					.prepareStatement("SELECT name,password FROM logintb WHERE name=? and password=?");
 			ps.setString(1, uname);

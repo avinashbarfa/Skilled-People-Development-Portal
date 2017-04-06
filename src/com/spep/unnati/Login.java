@@ -43,7 +43,7 @@ public class Login extends HttpServlet {
 				rd.include(request, response);
 			} else {
 				out.println("Sorry username or password error");
-				RequestDispatcher rd = request.getRequestDispatcher("index.html");
+				RequestDispatcher rd = request.getRequestDispatcher("login.html");
 				rd.include(request, response);
 			}
 		} else if (option.equals("ITI")) {
@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
 				rd.include(request, response);
 			} else {
 				out.println("Sorry username or password error");
-				RequestDispatcher rd = request.getRequestDispatcher("index.html");
+				RequestDispatcher rd = request.getRequestDispatcher("login.html");
 				rd.include(request, response);
 			}
 		}
