@@ -38,7 +38,7 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("passwd");
 		String option = request.getParameter("login-as");
 		PrintWriter out = response.getWriter();
-		if (option.equals("Company")) {
+		if (option.equals("company")) {
 			if (ELoginValidate.validate(uname, password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", uname);
@@ -49,7 +49,7 @@ public class Login extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("login.html");
 				rd.forward(request, response);
 			}
-		} else if (option.equals("ITI")) {
+		} else if (option.equals("iti")) {
 			if (TLoginValidate.validate(uname, password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", uname);
