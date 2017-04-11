@@ -1,16 +1,13 @@
 package com.spep.unnati;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 /**
  * Servlet implementation class ESignup
@@ -44,27 +41,13 @@ public class TSignup extends HttpServlet {
 		String city = request.getParameter("city");
 		String password = request.getParameter("passwd");
 		PrintWriter out = response.getWriter();
-		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO institute (instiname,userpass,contact,country,state,zip,city) VALUES(?,?,?,?,?,?,?)");
-			ps.setString(1, organization);
-			ps.setString(2, password);
-			ps.setString(3, contact);
-			ps.setString(4, country);
-			ps.setString(5, state);
-			ps.setString(6, zip);
-			ps.setString(7, city);
-			int i = ps.executeUpdate();
-
-			if (i > 0) {
-				out.println("You are successfully Registered!");
-			}
-
-		} catch (Exception ex) {
-			System.out.println(ex);
+		int i = SignupValidate.tValidate(organization, password, contact, country, state, zip, city);
+		if (i > 0) {
+			out.println("You are successfully Registered!");
+			HttpSession session = request.getSession();
+			session.setAttribute("Organization", organization);
+			response.sendRedirect("login.html");
 		}
-
 	}
 
 }

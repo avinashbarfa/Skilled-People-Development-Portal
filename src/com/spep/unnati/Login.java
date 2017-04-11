@@ -1,8 +1,7 @@
 package com.spep.unnati;
 
-import java.io.IOException; 
+import java.io.IOException;
 import java.io.PrintWriter;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,8 +37,8 @@ public class Login extends HttpServlet {
 		String password = request.getParameter("passwd");
 		String option = request.getParameter("login-as");
 		PrintWriter out = response.getWriter();
-		if (option.equals("company")) {
-			if (ELoginValidate.validate(uname, password)) {
+		if (option.equalsIgnoreCase("company")) {
+			if (LoginValidate.eValidate(uname, password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", uname);
 				RequestDispatcher rd = request.getRequestDispatcher("employerdashboard.html");
@@ -49,8 +48,8 @@ public class Login extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("login.html");
 				rd.forward(request, response);
 			}
-		} else if (option.equals("iti")) {
-			if (TLoginValidate.validate(uname, password)) {
+		} else if (option.equalsIgnoreCase("iti")) {
+			if (LoginValidate.tValidate(uname, password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", uname);
 				RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
