@@ -13,10 +13,10 @@ public class TLoginValidate {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://appuscorpion.me:3306/alognew", "root",
-					"scorpion");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root",
+					"root");
 			PreparedStatement ps = conn
-					.prepareStatement("SELECT name,password FROM logintb WHERE name=? and password=?");
+					.prepareStatement("SELECT instiname,userpass FROM institute WHERE instiname=? and userpass=?");
 			ps.setString(1, uname);
 			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();

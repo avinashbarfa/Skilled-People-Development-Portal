@@ -30,29 +30,29 @@
 			<form action="ESignup" method="POST">
 			    <div class="col-md-12">	
 			    	<label for="fname">Input Organization Name :</label>
-			    	<input type="text" id="insId" name="firstname" placeholder="Input Organization Name..">
+			    	<input type="text" name="orgname" placeholder="Input Organization Name.." required="required">
 			    </div>
 			    <div class="col-md-6">
 			   		<label for="lname">Contact Number :</label>
-			    	<input type="text" id="insContact" name="lastname" placeholder="Contact Number..">
+			    	<input type="text" name="contact" placeholder="Contact Number.." required="required">
 			    </div>
 			    <div class="col-md-6">
 			    	<label for="zipcode">Zip Code :</label>
-			    	<input type="text" id="" name="zip" placeholder="Pin Code">
+			    	<input type="text" name="zipcode" placeholder="Pin Code" required="required">
 			    </div>
 
 			    <div class="col-md-6">
 			    	<label for="country">Country :</label>
 			    	<select id="country" name="country">
- 		        		<option value="India">India</option>
+ 		        		<option value="india">India</option>
 				 	</select>
 				</div>
 				<div class="col-md-6">
 					<label for="state">State :</label>
 				    <select id="state" name="state">
-	 		        	<option value="">Andra Pradesh</option>
-					 	<option value="">Arunachal Pradesh</option>
-					 	<option value="">Assam</option>
+	 		        	<option value="andra">Andra Pradesh</option>
+					 	<option value="arunachal">Arunachal Pradesh</option>
+					 	<option value="assam">Assam</option>
 					 	<option value="">Andra Pradesh</option>
 					 	<option value="">Andra Pradesh</option>
 					 	<option value="">Andra Pradesh</option>
@@ -76,7 +76,16 @@
 					 	<option value="">Andra Pradesh</option>
 					 </select>
 				</div>
-				<input type="submit" value="Submit">
+				 <div class="col-md-6">	
+			    	<label for="city">City :</label>
+			    	<input type="text" name="city" placeholder="City.." required="required">
+			    </div>
+			    <div class="col-md-6">
+			    	<label for="password">Password :</label>
+			    	<input type="password" name="passwd" placeholder="Enter Password" required="required">
+			    </div>
+			    <br>
+				<input type="submit" value="submit">
 			</form>
 		</div>
 	</div>

@@ -36,23 +36,25 @@ public class AddLabour extends HttpServlet {
 		String name = request.getParameter("name");
 		String contact = request.getParameter("contact");
 		String zip = request.getParameter("zip");
-		String gender = request.getParameter("state");
+		String gender = request.getParameter("gender");
 		String skill = request.getParameter("skill");
 		String country = request.getParameter("country");
 		String state = request.getParameter("state");
+		String city = request.getParameter("city");
 		PrintWriter out = response.getWriter();
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://appuscorpion.me:3306/alognew", "root", "scorpion");
-			PreparedStatement ps =conn.prepareStatement("");
-			ps.setNString(1, name);
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
+			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city) Values(?,?,?,?,?,?,?,?)");
+			ps.setString(1,name);
 			ps.setString(2, contact);
 			ps.setString(3, zip);
-			ps.setString(3, gender);
-			ps.setString(4, skill);
-			ps.setString(5, country);
-			ps.setNString(6, state);
+			ps.setString(4, gender);
+			ps.setString(5, skill);
+			ps.setString(6, country);
+			ps.setString(7, state);
+			ps.setString(8, city);
 			
 			int i = ps.executeUpdate();
 			

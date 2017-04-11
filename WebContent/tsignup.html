@@ -30,27 +30,27 @@
 			<form action="TSignup" method="POST">
 			    <div class="col-md-12">	
 			    	<label for="fname">Training Institute Name :</label>
-			    	<input type="text" id="insId" name="firstname" placeholder="Input Training Center Name..">
+			    	<input type="text" name="tname" placeholder="Input Training Center Name.." required="required">
 			    </div>
 			    <div class="col-md-6">
 			   		<label for="lname">Contact Number :</label>
-			    	<input type="text" id="insContact" name="lastname" placeholder="Contact Number..">
+			    	<input type="text" name="tcontact" placeholder="Contact Number.." required="required">
 			    </div>
 			    <div class="col-md-6">
 			    	<label for="zipcode">Zip Code :</label>
-			    	<input type="text" id="" name="zip" placeholder="Pin Code">
+			    	<input type="text" name="zip" placeholder="Pin Code" required="required">
 			    </div>
 
 			    <div class="col-md-6">
 			    	<label for="country">Country :</label>
-			    	<select id="country" name="country">
+			    	<select name="country">
  		        		<option value="India">India</option>
 				 	</select>
 				</div>
 				<div class="col-md-6">
 					<label for="state">State :</label>
-				    <select id="state" name="state">
-	 		        	<option value="">Andra Pradesh</option>
+				    <select name="state">
+	 		        	<option value="andra">Andra Pradesh</option>
 					 	<option value="">Arunachal Pradesh</option>
 					 	<option value="">Assam</option>
 					 	<option value="">Andra Pradesh</option>
@@ -76,6 +76,16 @@
 					 	<option value="">Andra Pradesh</option>
 					 </select>
 				</div>
+
+				 <div class="col-md-6">	
+			    	<label for="city">City :</label>
+			    	<input type="text" name="city" placeholder="City.." required="required">
+			    </div>
+			    <div class="col-md-6">
+			    	<label for="password">Password :</label>
+			    	<input type="password" name="passwd" placeholder="Enter Password" required="required">
+			    </div>
+			    <br>
 				<input type="submit" value="Submit">
 			</form>
 		</div>

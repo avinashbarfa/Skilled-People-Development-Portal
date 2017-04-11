@@ -36,21 +36,25 @@ public class TSignup extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
-		String organization = request.getParameter("firstname");
-		String contact = request.getParameter("lastname");
+		String organization = request.getParameter("tname");
+		String contact = request.getParameter("tcontact");
 		String zip = request.getParameter("zip");
 		String country = request.getParameter("country");
 		String state = request.getParameter("state");
+		String city = request.getParameter("city");
+		String password = request.getParameter("passwd");
 		PrintWriter out = response.getWriter();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://appuscorpion.me:3306/alognew", "root", "scorpion");
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO company VALUES(?,?,?,?,?)");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO institute (instiname,userpass,contact,country,state,zip,city) VALUES(?,?,?,?,?,?,?)");
 			ps.setString(1, organization);
-			ps.setString(2, contact);
-			ps.setString(3, zip);
+			ps.setString(2, password);
+			ps.setString(3, contact);
 			ps.setString(4, country);
 			ps.setString(5, state);
+			ps.setString(6, zip);
+			ps.setString(7, city);
 			int i = ps.executeUpdate();
 
 			if (i > 0) {

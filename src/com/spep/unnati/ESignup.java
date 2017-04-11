@@ -1,12 +1,11 @@
 package com.spep.unnati;
 
-import java.io.IOException;
+import java.io.IOException; 
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -37,21 +36,25 @@ public class ESignup extends HttpServlet {
 			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
-		String organization = request.getParameter("firstname");
-		String contact = request.getParameter("lastname");
-		String zip = request.getParameter("zip");
-		// String country = request.getParameter("country");
-		// String state = request.getParameter("state");
+		String organization = request.getParameter("orgname");
+		String contact = request.getParameter("contact");
+		String zip = request.getParameter("zipcode");
+		String country = request.getParameter("country");
+		String state = request.getParameter("state");
+		String city = request.getParameter("city");
+		String password = request.getParameter("passwd");
 		PrintWriter out = response.getWriter();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/alognew", "root", "scorpion");
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO logintb (name,mobile,password) VALUES(?,?,?)");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO company (compname,userpass,contact,country,state,zip,city) VALUES(?,?,?,?,?,?,?)");
 			ps.setString(1, organization);
-			ps.setString(2, contact);
-			ps.setString(3, zip);
-			// ps.setString(4, country);
-			// ps.setString(5, state);
+			ps.setString(2, password);
+			ps.setString(3, contact);
+			ps.setString(4, country);
+			ps.setString(5, state);
+			ps.setString(6, zip);
+			ps.setString(7, city);
 			int i = ps.executeUpdate();
 
 			if (i > 0) {
