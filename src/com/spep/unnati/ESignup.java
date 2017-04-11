@@ -43,11 +43,12 @@ public class ESignup extends HttpServlet {
 		String state = request.getParameter("state");
 		String city = request.getParameter("city");
 		String password = request.getParameter("passwd");
+		String address = request.getParameter("add");
 		PrintWriter out = response.getWriter();
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-			PreparedStatement ps = conn.prepareStatement("INSERT INTO company (compname,userpass,contact,country,state,zip,city) VALUES(?,?,?,?,?,?,?)");
+			PreparedStatement ps = conn.prepareStatement("INSERT INTO company (compname,userpass,contact,country,state,zip,city,address) VALUES(?,?,?,?,?,?,?,?)");
 			ps.setString(1, organization);
 			ps.setString(2, password);
 			ps.setString(3, contact);
@@ -55,6 +56,7 @@ public class ESignup extends HttpServlet {
 			ps.setString(5, state);
 			ps.setString(6, zip);
 			ps.setString(7, city);
+			ps.setString(8, address);
 			int i = ps.executeUpdate();
 
 			if (i > 0) {

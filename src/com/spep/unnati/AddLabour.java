@@ -41,12 +41,13 @@ public class AddLabour extends HttpServlet {
 		String country = request.getParameter("country");
 		String state = request.getParameter("state");
 		String city = request.getParameter("city");
+		String address = request.getParameter("add");
 		PrintWriter out = response.getWriter();
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city) Values(?,?,?,?,?,?,?,?)");
+			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,address) Values(?,?,?,?,?,?,?,?,?)");
 			ps.setString(1,name);
 			ps.setString(2, contact);
 			ps.setString(3, zip);
@@ -55,6 +56,7 @@ public class AddLabour extends HttpServlet {
 			ps.setString(6, country);
 			ps.setString(7, state);
 			ps.setString(8, city);
+			ps.setString(9, address);
 			
 			int i = ps.executeUpdate();
 			

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html>
 <head>
 	<title>UNNATI : DASHBOARD</title>
@@ -37,15 +37,15 @@
 				<form action="AddLabour" method="POST">
 			    <div class="col-md-12">	
 			    	<label for="fname">Full Name :</label>
-			    	<input type="text" name="name" placeholder="Enter Full Name..">
+			    	<input type="text" name="name" placeholder="Enter Full Name.." required="required">
 			    </div>
 			    <div class="col-md-6">
 			   		<label for="lname">Contact Number :</label>
-			    	<input type="text" name="contact" placeholder="Contact Number..">
+			    	<input type="text" name="contact" placeholder="Contact Number.." required="required">
 			    </div>
 			    <div class="col-md-6">
 			    	<label for="zipcode">Zip Code :</label>
-			    	<input type="text" name="zip" placeholder="Pin Code">
+			    	<input type="text" name="zip" placeholder="Pin Code" required="required">
 			    </div>
 			    <div class="col-md-6">
 			    	<label for="gender">Gender :</label>
@@ -103,7 +103,11 @@
 				</div>
 				<div class="col-md-12">	
 			    	<label for="city">City :</label>
-			    	<input type="text" name="city" placeholder="City">
+			    	<input type="text" name="city" placeholder="City" required="required">
+			    </div>
+			    <div class="col-md-12">	
+			    	<label for="address">Address :</label>
+			    	<input type="text" name="add" placeholder="Enter Address : " required="required">
 			    </div>
 				<input type="submit" value="Submit">
 			</form>
