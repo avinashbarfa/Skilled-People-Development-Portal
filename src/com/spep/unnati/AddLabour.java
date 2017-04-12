@@ -42,21 +42,25 @@ public class AddLabour extends HttpServlet {
 		String state = request.getParameter("state");
 		String city = request.getParameter("city");
 		String address = request.getParameter("add");
+		String latitude = "none";
+		String longitutde = "none";
 		PrintWriter out = response.getWriter();
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,address) Values(?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,address,latitude,longitude) Values(?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1,name);
 			ps.setString(2, contact);
-			ps.setString(3, zip);
-			ps.setString(4, gender);
-			ps.setString(5, skill);
-			ps.setString(6, country);
-			ps.setString(7, state);
+			ps.setString(3, gender);
+			ps.setString(4, skill);
+			ps.setString(5, country);
+			ps.setString(6, state);
+			ps.setString(7, zip);
 			ps.setString(8, city);
 			ps.setString(9, address);
+			ps.setString(10, latitude);
+			ps.setString(11, longitutde);
 			
 			int i = ps.executeUpdate();
 			

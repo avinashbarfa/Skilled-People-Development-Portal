@@ -49,20 +49,20 @@
 			    </div>
 			    <div class="col-md-6">
 			    	<label for="gender">Gender :</label>
-			    	 <select id="state" name="state">
+			    	 <select name="gender">
 	 		        	<option value="male">Male</option>
 					 	<option value="female">Female</option>
 					 </select>	
 			    </div>
 			    <div class="col-md-6">
 			    	<label for="skill">Skill :</label>
-			    	<select id="state" name="state">
-	 		        	<option value="">Tailoring</option>
-					 	<option value="">Tailoring</option>
-					 	<option value="">Tailoring</option>
-					 	<option value="">Tailoring</option>
-					 	<option value="">Tailoring</option>
-					 	<option value="">Tailoring</option>
+			    	<select name="skill">
+	 		        	<option value="tailor">Tailoring</option>
+					 	<option value="data1">Tailoring</option>
+					 	<option value="data2">Tailoring</option>
+					 	<option value="data3">Tailoring</option>
+					 	<option value="data4">Tailoring</option>
+					 	<option value="data5">Tailoring</option>
 					 </select>
 			    </div>
 
@@ -114,7 +114,12 @@
 			</div>
 
 			<div id="viewLabour" class="tabcontent">
-			  
+			 	<form action="SearchLabour" method="POST">
+			 		<input type="text" name="searchlabel" placeholder="Enter Username to Search..." required="required">
+			 		
+			 		<button type="submit" name="submit">View Details</button>
+ 			 	
+			 	</form>
 			</div>
 
 			<div id="profile" class="tabcontent">
