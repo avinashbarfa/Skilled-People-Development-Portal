@@ -11,6 +11,7 @@ public class LoginValidate {
 
 	public static boolean eValidate(String uname, String password) {
 
+		password = HashPassword.hashed(password);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
@@ -29,6 +30,7 @@ public class LoginValidate {
 
 	public static boolean tValidate(String uname, String password) {
 
+		password = HashPassword.hashed(password);
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");

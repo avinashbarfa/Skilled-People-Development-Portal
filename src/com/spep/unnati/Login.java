@@ -44,8 +44,7 @@ public class Login extends HttpServlet {
 				RequestDispatcher rd = request.getRequestDispatcher("employerdashboard.jsp");
 				rd.forward(request, response);
 			} else {
-				out.println("Sorry username or password error");
-				RequestDispatcher rd = request.getRequestDispatcher("login.html");
+				RequestDispatcher rd = request.getRequestDispatcher("error-login.html");
 				rd.forward(request, response);
 			}
 		} else if (option.equalsIgnoreCase("iti")) {
@@ -56,11 +55,10 @@ public class Login extends HttpServlet {
 				rd.forward(request, response);
 			} else {
 				out.println("Sorry username or password error");
-				RequestDispatcher rd = request.getRequestDispatcher("login.html");
+				RequestDispatcher rd = request.getRequestDispatcher("error-login.html");
 				rd.forward(request, response);
 			}
 		}
 		out.close();
 	}
-
 }
