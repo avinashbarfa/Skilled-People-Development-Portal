@@ -36,16 +36,19 @@ public class GenerateData extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
-		double latitudeVariable = -3.14;
-		double longitudeVariable = -6.28;
+		
 			
-		for(int i = 0;i < 500;i++){
+		for(double j = 69;j <= 78;j = j + 0.09){
+			
+			double longitudeVariable = -6.28;
+		
+		for(double i = 8;i <= 21;i = i + 0.21){
 			
 			
 			char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 			StringBuilder sb = new StringBuilder();
 			Random random = new Random();
-			for (int j = 0; j < 5; j++) {
+			for (int k = 0; k < 5; k++) {
 			    char c = chars[random.nextInt(chars.length)];
 			    sb.append(c);
 			}
@@ -64,8 +67,8 @@ public class GenerateData extends HttpServlet {
 			String city = sb.toString();
 			String address = sb.toString();
 			String status = "Not Employed";
-			String latitude = String.valueOf(latitudeVariable + (i*0.00628));
-			String longitutde = String.valueOf(longitudeVariable + (i*0.01256));
+			String latitude = String.valueOf(i);
+			String longitutde = String.valueOf(j);
 		
 			PrintWriter out = response.getWriter();
 			
@@ -91,7 +94,7 @@ public class GenerateData extends HttpServlet {
 				if(y > 0) {
 					out.println("Labour Is Successfull Registered !");
 					try {
-						TimeUnit.SECONDS.sleep(1);
+						TimeUnit.MILLISECONDS.sleep(100);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -106,6 +109,7 @@ public class GenerateData extends HttpServlet {
 				e.printStackTrace();
 			
 			}
+		}
 		}
 	}
 
