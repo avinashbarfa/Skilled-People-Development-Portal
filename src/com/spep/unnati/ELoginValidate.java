@@ -13,8 +13,7 @@ public class ELoginValidate {
 
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root",
-					"root");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
 			PreparedStatement ps = conn
 					.prepareStatement("SELECT compname,userpass FROM company WHERE compname=? and userpass=?");
 			ps.setString(1, uname);
