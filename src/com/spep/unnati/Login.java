@@ -41,7 +41,7 @@ public class Login extends HttpServlet {
 			if (LoginValidate.eValidate(uname, password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", uname);
-				RequestDispatcher rd = request.getRequestDispatcher("employerdashboard.html");
+				RequestDispatcher rd = request.getRequestDispatcher("employerdashboard.jsp");
 				rd.forward(request, response);
 			} else {
 				out.println("Sorry username or password error");
@@ -52,7 +52,7 @@ public class Login extends HttpServlet {
 			if (LoginValidate.tValidate(uname, password)) {
 				HttpSession session = request.getSession();
 				session.setAttribute("username", uname);
-				RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.html");
+				RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.jsp");
 				rd.forward(request, response);
 			} else {
 				out.println("Sorry username or password error");
