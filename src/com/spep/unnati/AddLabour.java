@@ -44,12 +44,13 @@ public class AddLabour extends HttpServlet {
 		String address = request.getParameter("add");
 		String latitude = "none";
 		String longitutde = "none";
+		String status = "Not Employed";
 		PrintWriter out = response.getWriter();
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,address,latitude,longitude) Values(?,?,?,?,?,?,?,?,?,?,?)");
+			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,address,latitude,longitude,jobstatus) Values(?,?,?,?,?,?,?,?,?,?,?,?)");
 			ps.setString(1,name);
 			ps.setString(2, contact);
 			ps.setString(3, gender);
@@ -61,6 +62,7 @@ public class AddLabour extends HttpServlet {
 			ps.setString(9, address);
 			ps.setString(10, latitude);
 			ps.setString(11, longitutde);
+			ps.setString(12, status);
 			
 			int i = ps.executeUpdate();
 			
