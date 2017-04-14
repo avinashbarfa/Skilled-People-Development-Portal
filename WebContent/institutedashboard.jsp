@@ -1,4 +1,13 @@
- <!DOCTYPE html>
+<%@page import="java.sql.DriverManager"%>
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.io.PrintWriter"%>
+<%@page import="java.sql.Statement"%>
+<%@page import="java.sql.Connection"%>
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+
+<!DOCTYPE html>
 <html>
 <head>
 	<title>UNNATI : DASHBOARD</title>
@@ -27,13 +36,13 @@
 		<div class="container">
 		    <hr>
 		    <div class="tab">
-				<button class="tablinks" onclick="openCategory(event, 'profile')" id="defaultOpen">PROFILE</button>
+				<button class="tablinks" onclick="openCategory(event, 'profile')"  id="defaultOpen">PROFILE</button>
 				<button class="tablinks" onclick="openCategory(event, 'addlabour')">ADD LABOUR</button>
 				<button class="tablinks" onclick="openCategory(event, 'viewLabour')">VIEW LABOUR</button>
 			</div>
 
-			<div id="addlabour" class="tabcontent">
-				<h3 style="text-align: center;">Add Labour</h3>
+			<div id="addlabour" class="tabcontent" style="height: 720px;">
+				<h3 style="text-align: center;color: darkcyan;">Add Labour</h3>
 				<form action="AddLabour" method="POST">
 			    <div class="col-md-12">	
 			    	<label for="fname">Full Name :</label>
@@ -109,30 +118,71 @@
 			    	<label for="address">Address :</label>
 			    	<input type="text" name="add" placeholder="Enter Address : " required="required">
 			    </div>
-				<input type="submit" value="Submit">
+				<input type="submit" value="Submit" style="height: 48px;width: 138px;border-radius: 0;float: right;margin-top: 50px;
+    							margin-right: 21px;">
 			</form>
 			</div>
 
-			<div id="viewLabour" class="tabcontent">
+			<div id="viewLabour" class="tabcontent" style="height:250px;">
+			
 			 	<form action="SearchLabour" method="POST">
-			 		<input type="text" name="searchlabel" placeholder="Enter Username to Search..." required="required">
+			 		<input type="text" name="searchlabel" placeholder="Enter Username to Search..." required="required" style="margin-top: 18px;width: 860px">
 			 		
-			 		<button type="submit" name="submit">View Details</button>
+			 		<input type="submit" name="submit" value="View Details"  style="height: 48px;width: 138px;border-radius: 0;float: right;margin-top: 16px;
+    							margin-right: 21px;" >
+			 	
  			 	
 			 	</form>
 			</div>
 
-			<div id="profile" class="tabcontent">
+			<div id="profile" class="tabcontent" style="height: 468px;">
 				
 				<%
 				HttpSession check_session = request.getSession(false);
 				String uname = (String)session.getAttribute("username");
 				
 				if(uname != null) {	
-					%> 
-					<h3 style="text-align: center;">Welcome <%= uname %> </h3><%	
+					%>
+				<h3 style="text-align: center;color: darkcyan;">
+					 Welcome
+					<%= uname %>
+				</h3>
+				<%	
+				}
+				else
+				{
+					response.sendRedirect("login.html");
 				}
 				%>
+
+				<%
+	
+	try{
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati","root","root");
+		PreparedStatement stmt = conn.prepareStatement("SELECT * FROM company WHERE compname=?");
+		stmt.setString(1,uname);
+		ResultSet rs = stmt.executeQuery();
+		
+		while(rs.next())
+		{%>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+					Organisation   : <%=rs.getString("compname") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+					Contact Number : <%=rs.getString("contact") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+				    State          : <%=rs.getString("state") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+				    Zip Code       : <%=rs.getString("zip") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+					City           : <%=rs.getString("city") %></h4>
+				<%}
+		conn.close();
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+%>
+
 			</div>
 
 		</div>
