@@ -36,38 +36,46 @@ public class GenerateData extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
-		double latitudeVariable = -3.14;
-		double longitudeVariable = -6.28;
+		int count = 0;
+		PrintWriter out = response.getWriter();
 			
-		for(int i = 0;i < 500;i++){
+		for(double j = 69;j <= 78;j = j + 0.09){
+			
+			int counter = 0;
+			
+		for(double i = 8;i <= 21;i = i + 0.21){
 			
 			
 			char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 			StringBuilder sb = new StringBuilder();
 			Random random = new Random();
-			for (int j = 0; j < 5; j++) {
+			for (int k = 0; k < 5; k++) {
 			    char c = chars[random.nextInt(chars.length)];
 			    sb.append(c);
 			}
 			String name = sb.toString();
-			String contact = sb.toString();
+			String contact;
 			String gender;
-			if(i % 2 == 0){
+			String skill;
+			if(counter % 2 == 0){
+				contact = "7709244773";
                 gender = "Female";
+                skill = "Excel";
 			}else{
+				contact = "7887554203";
 				gender = "Male";
+				skill = "Power point";
 			}
-			String skill = sb.toString();
 			String country = sb.toString();
 			String state = sb.toString();
 			String zip = sb.toString();
 			String city = sb.toString();
 			String address = sb.toString();
 			String status = "Not Employed";
-			String latitude = String.valueOf(latitudeVariable + (i*0.00628));
-			String longitutde = String.valueOf(longitudeVariable + (i*0.01256));
+			String latitude = String.valueOf(i);
+			String longitutde = String.valueOf(j);
 		
-			PrintWriter out = response.getWriter();
+			
 			
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
@@ -89,9 +97,9 @@ public class GenerateData extends HttpServlet {
 				int y = ps.executeUpdate();
 				
 				if(y > 0) {
-					out.println("Labour Is Successfull Registered !");
+					count++;
 					try {
-						TimeUnit.SECONDS.sleep(1);
+						TimeUnit.MILLISECONDS.sleep(100);
 					} catch (InterruptedException e) {
 						// TODO Auto-generated catch block
 						e.printStackTrace();
@@ -106,7 +114,11 @@ public class GenerateData extends HttpServlet {
 				e.printStackTrace();
 			
 			}
+			
+			counter++;
 		}
+		}
+		out.println(" " + count);
 	}
 
 
