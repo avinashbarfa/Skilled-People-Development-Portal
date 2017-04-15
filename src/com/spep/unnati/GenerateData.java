@@ -43,7 +43,7 @@ public class GenerateData extends HttpServlet {
 			
 			int counter = 0;
 			
-		for(double i = 8;i <= 21;i = i + 0.21){
+		for(double i = 69;i <= 89;i = i + 0.20){
 			
 			
 			char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
