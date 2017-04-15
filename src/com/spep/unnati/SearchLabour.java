@@ -41,11 +41,12 @@ public class SearchLabour extends HttpServlet {
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
 			 PreparedStatement ps=conn.prepareStatement("select * from labour where fullname=?");
 			 ps.setString(1, label);  
-             out.print("<center><h2>Result:</h2></center>");
-             out.print("<table width=50% border=1>");
+			 out.println("<body style='background-color:transparent;'>");
+             out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
+             out.print("<table style='margin-left: 300px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:800px;'>");
              ResultSet rs=ps.executeQuery();                
              /* Printing column names */
-             ResultSetMetaData rsmd=rs.getMetaData();  
+           //  ResultSetMetaData rsmd=rs.getMetaData();  
         //     int total=rsmd.getColumnCount();  
             /* out.print("<tr>");  
              
@@ -60,37 +61,37 @@ public class SearchLabour extends HttpServlet {
              while(rs.next())  
              {  
                 out.print("<tr>");
-                out.print("<td>"+rsmd.getColumnName(1)+"</td>");
+                out.print("<td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Sr. No"+"</td>");
                 out.print("<td>"+rs.getString(1)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(2)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Full Name :"+"</td>");
                 out.print("<td>"+rs.getString(2)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(3)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Contact Number :"+"</td>");
                 out.print("<td>"+rs.getString(3)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(4)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Gender :"+"</td>");
                 out.print("<td>"+rs.getString(4)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(5)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Skill Knows :"+"</td>");
                 out.print("<td>"+rs.getString(5)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(6)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Country :"+"</td>");
                 out.print("<td>"+rs.getString(6)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(7)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"State :"+"</td>");
                 out.print("<td>"+rs.getString(7)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(8)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Pin Code :"+"</td>");
                 out.print("<td>"+rs.getString(8)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(9)+"</td>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"City :"+"</td>");
                 out.print("<td>"+rs.getString(9)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(10)+"</td>");
-                out.print("<td>"+rs.getString(10)+"</td></tr>");
-                out.print("<tr><td>"+rsmd.getColumnName(11)+"</td>");
-                out.print("<td>"+rs.getString(11)+"</td></tr>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Job Status : "+"</td>");
+                out.print("<td>"+rs.getString(12)+"</td></tr>");
+                out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Date Of Registration :"+"</td>");
+                out.print("<td>"+rs.getString(13)+"</td></tr>");
              
              }  
              out.print("</table>");
-
+             out.print("<h4 style='text-align: center;margin-top: 24px;'><a style='text-decoration: none;' href='institutedashboard.jsp'>Go Back to the Dashbaord</a>");
       }catch (Exception e2)
         {
             e2.printStackTrace();
         }
-
+		
       finally{out.close();
 			
 		}
