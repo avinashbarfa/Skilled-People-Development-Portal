@@ -39,11 +39,11 @@ public class GenerateData extends HttpServlet {
 		int count = 0;
 		PrintWriter out = response.getWriter();
 			
-		for(double j = 69;j <= 78;j = j + 0.09){
+		for(double j = 69;j <= 89;j = j + 0.20){
 			
 			int counter = 0;
 			
-		for(double i = 69;i <= 89;i = i + 0.20){
+		for(double i = 8;i <= 29;i = i + 0.21){
 			
 			
 			char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
@@ -66,6 +66,7 @@ public class GenerateData extends HttpServlet {
 				gender = "Male";
 				skill = "Power point";
 			}
+
 			String country = sb.toString();
 			String state = sb.toString();
 			String zip = sb.toString();
