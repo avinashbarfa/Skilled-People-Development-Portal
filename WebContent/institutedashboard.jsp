@@ -130,6 +130,8 @@
 
 			<div id="viewLabour" class="tabcontent" style="height:250px;">
 			
+				<h3 style="text-align: center;color: darkcyan;">View Labour Details</h3>
+				
 			 	<form action="SearchLabour" method="POST">
 			 		<input type="text" name="searchlabel" placeholder="Enter Username to Search..." required="required" style="margin-top: 18px;width: 860px">
 			 		
@@ -165,18 +167,20 @@
 	try{
 		Class.forName("com.mysql.jdbc.Driver");
 		Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati","root","root");
-		PreparedStatement stmt = conn.prepareStatement("SELECT * FROM company WHERE compname=?");
+		PreparedStatement stmt = conn.prepareStatement("SELECT * FROM institute WHERE instiname=?");
 		stmt.setString(1,uname);
 		ResultSet rs = stmt.executeQuery();
 		
 		while(rs.next())
 		{%>
 				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
-					Organisation   : <%=rs.getString("compname") %></h4>
+					Organisation   : <%=rs.getString("instiname") %></h4>
 				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
 					Contact Number : <%=rs.getString("contact") %></h4>
 				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
 				    State          : <%=rs.getString("state") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+				    Country        : <%=rs.getString("country") %></h4>
 				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
 				    Zip Code       : <%=rs.getString("zip") %></h4>
 				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">

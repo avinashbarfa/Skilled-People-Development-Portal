@@ -15,21 +15,8 @@
 <link rel="stylesheet" type="text/css" href="css/main.css" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-<<<<<<< HEAD
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
 
-=======
-<%@page import="java.sql.DriverManager"%>
-<%@page import="java.sql.ResultSet"%>
-<%@page import="java.sql.PreparedStatement"%>
-<%@page import="java.io.PrintWriter"%>
-<%@page import="java.sql.Statement"%>
-<%@page import="java.sql.Connection"%>
->>>>>>> origin/master
-</head>
-<style>
-</style>
 
 <body>
 
@@ -45,43 +32,31 @@
 		<div class="container">
 			<hr>
 			<div class="tab">
-<<<<<<< HEAD
 				<button class="tablinks" onclick="openCategory(event, 'profile')" id="defaultOpen">PROFILE</button>
 				<button class="tablinks" onclick="openCategory(event, 'searchLabour')">SEARCH LABOUR</button>
 				<button class="tablinks" onclick="openCategory(event, 'viewLabour')">VIEW LABOUR</button>
-=======
-				<button class="tablinks" onclick="openCategory(event, 'profile')"
-					id="defaultOpen">PROFILE</button>
-				<button class="tablinks"
-					onclick="openCategory(event, 'searchLabour')">SEARCH
-					LABOUR</button>
-				<button class="tablinks" onclick="openCategory(event, 'viewLabour')">VIEW
-					LABOUR</button>
->>>>>>> origin/master
 			</div>
 
 			<div id="searchLabour" class="tabcontent">
-				<form>
-					<table border="1">
-						<tr>
-							<td>
-								<h4>Name :</h4>
-							</td>
-							<td><input type="text" name="labname"></td>
-						</tr>
-					</table>
-				</form>
+				
+				<h3 style="text-align: center;color: darkcyan;">Search Labours For Your Work To Be Done</h3>
+				
+				
+				<h2>TAsk to be done By Apurv and Rushin</h2>
+					
 			</div>
 
-<<<<<<< HEAD
 			<div id="viewLabour" class="tabcontent">
-			
-				<h2>TAsk to be done By Apurv</h2>
-			
+				
+				<h3 style="text-align: center;color: darkcyan;">View Labour Details</h3>
+				<form action="SearchLabour" method="POST">
+			 		<input type="text" name="searchlabel" placeholder="Enter Username to Search..." required="required" style="margin-top: 18px;width: 860px">
+			 		
+			 		<input type="submit" name="submit" value="View Details"  style="height: 48px;width: 138px;border-radius: 0;float: right;margin-top: 16px;
+    							margin-right: 21px;" > 			 	
+			 	</form>
+				
 			</div>
-=======
-			<div id="viewLabour" class="tabcontent"></div>
->>>>>>> origin/master
 
 			<div id="profile" class="tabcontent" style="height: 468px;">
 				<%
@@ -90,7 +65,7 @@
 				
 				if(uname != null) {	
 					%>
-				<h3 style="text-align: center;">
+				<h3 style="text-align: center;color: darkcyan;">
 					Welcome
 					<%= uname %>
 				</h3>
@@ -113,25 +88,23 @@
 		
 		while(rs.next())
 		{%>
-<<<<<<< HEAD
-				<h4>Company Name   : <%=rs.getString("compname") %></h4>
-				<h4>Contact Number : <%=rs.getString("contact") %></h4>
-				<h4>State          : <%=rs.getString("state") %></h4>
-				<h4>Zip Code       : <%=rs.getString("zip") %></h4>
-				<h4>City           : <%=rs.getString("city") %></h4>
-=======
-				<h3><%=rs.getString("compname") %></h3>
-				<p><%=rs.getString("contact") %></p>
-				<p><%=rs.getString("state") %></p>
-				<p><%=rs.getString("zip") %></p>
-				<p><%=rs.getString("city") %></p>
->>>>>>> origin/master
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+						Company Name   : <%=rs.getString("compname") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+						Contact Number : <%=rs.getString("contact") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+						State          : <%=rs.getString("state") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;">
+						Zip Code       : <%=rs.getString("zip") %></h4>
+				<h4 style="padding-left: 80px;padding-top: 16px;text-align: left;color: forestgreen;"
+						>City           : <%=rs.getString("city") %></h4>
+				
 				<%}
 		conn.close();
 		}catch(Exception e){
 			e.printStackTrace();
 		}
-%>
+         %>
 
 			</div>
 
@@ -157,5 +130,6 @@
 		</div>
 	</div>
 </body>
+
 <script src="js/main.js"></script>
 </html>
