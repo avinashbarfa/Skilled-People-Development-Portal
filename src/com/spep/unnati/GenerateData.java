@@ -38,14 +38,62 @@ public class GenerateData extends HttpServlet {
 		response.setContentType("text/html");
 		int count = 0;
 		PrintWriter out = response.getWriter();
-			
+		
+		
 		for(double j = 69;j <= 89;j = j + 0.20){
 			
 			int counter = 0;
 			
 		for(double i = 8;i <= 29;i = i + 0.21){
 			
+			String[] firstnamearr = {"Vijay","Vivek","Raghav","Sanjay","Aayush","Saurabh","Sarthak","Sagar","Sakshi","Sejal","Akansha"};
+			String random1 = (firstnamearr[new Random().nextInt(firstnamearr.length)]);
 			
+			String[] lastnamearr = {"Agrawal","Taneja","Gersch","Jespersen","Merzdorf","Vinson","Harvey","Haerdle"};
+			String random2 = (lastnamearr[new Random().nextInt(lastnamearr.length)]);
+			
+			String[] contactarr = {"9179686919","7709244773","7887554203"};
+			String random3 = (contactarr[new Random().nextInt(contactarr.length)]);
+			
+			String[] skillarr = {"Tailor","Agriculture","Electrican","Nursing","Fabrication"};
+			String random4 = (skillarr[new Random().nextInt(skillarr.length)]);
+			
+			String[] statesarr = {"Andhra Pradesh","Arunachal Pradesh",
+			"Assam",
+			"Bihar",
+			"Chandigarh",
+			"Chhattisgarh",
+			"Dadra and Nagar Haveli",
+			"Daman and Diu",
+			"Delhi",
+			"Goa",
+			"Gujarat",
+			"Haryana",
+			"Himachal Pradesh",
+			"Jammu and Kashmir",
+			"Jharkhand",
+			"Karnataka",
+			"Kerala",
+			"Lakshadweep",
+			"Madhya Pradesh",
+			"Maharashtra",
+			"Manipur",
+			"Meghalaya",
+			"Mizoram",
+			"Nagaland",
+			"Orissa",
+			"Pondicherry",
+			"Punjab",
+			"Rajasthan",
+			"Sikkim",
+			"Tamil Nadu",
+			"Telangana",
+			"Tripura",
+			"Uttaranchal",
+			"Uttar Pradesh",
+			"West Bengal"};
+			String random5= (statesarr[new Random().nextInt(statesarr.length)]);
+		    
 			char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
 			StringBuilder sb = new StringBuilder();
 			Random random = new Random();
@@ -53,35 +101,36 @@ public class GenerateData extends HttpServlet {
 			    char c = chars[random.nextInt(chars.length)];
 			    sb.append(c);
 			}
-			String name = sb.toString();
-			String contact;
+			
+			
+			String name = random1+" "+random2;
+			String contact = random3;
+			String skill = random4;
+			
 			String gender;
-			String skill;
-			if(counter % 2 == 0){
-				contact = "7709244773";
+			if(random1 =="Sakshi" || random1=="Sejal" || random1=="Akansha"){
                 gender = "Female";
-                skill = "Excel";
 			}else{
-				contact = "7887554203";
 				gender = "Male";
-				skill = "Power point";
 			}
 
-			String country = sb.toString();
-			String state = sb.toString();
+			
+			String country = "India";
+			String state = random5;
 			String zip = sb.toString();
 			String city = sb.toString();
-			String address = sb.toString();
 			String status = "Not Employed";
 			String latitude = String.valueOf(i);
 			String longitutde = String.valueOf(j);
+			String dirlatitude = "N";
+			String dirlongitude = "S";
 		
 			
 			
 			try {
 				Class.forName("com.mysql.jdbc.Driver");
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-				PreparedStatement ps = conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,address,latitude,longitude,jobstatus) Values(?,?,?,?,?,?,?,?,?,?,?,?)");
+				PreparedStatement ps = conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,latitude,longitude,jobstatus,dirlatitude,dirlongitude) Values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
 				ps.setString(1, name);
 				ps.setString(2, contact);
 				ps.setString(3, gender);
@@ -90,10 +139,11 @@ public class GenerateData extends HttpServlet {
 				ps.setString(6, state);
 				ps.setString(7, zip);
 				ps.setString(8, city);
-				ps.setString(9, address);
-				ps.setString(10, latitude);
-				ps.setString(11, longitutde);
-				ps.setString(12, status);
+				ps.setString(9, latitude);
+				ps.setString(10, longitutde);
+				ps.setString(11, status);
+				ps.setString(12, dirlatitude);
+				ps.setString(13, dirlongitude);;
 
 				int y = ps.executeUpdate();
 				
