@@ -128,18 +128,26 @@
 			</form>
 			</div>
 
-			<div id="viewLabour" class="tabcontent" style="height:250px;">
+			<div id="viewLabour" class="tabcontent" style="height:320px;">
 			
 				<h3 style="text-align: center;color: darkcyan;">View Labour Details</h3>
 				
 			 	<form action="SearchLabour" method="POST">
-			 		<input type="text" name="searchlabel" placeholder="Enter Username to Search..." required="required" style="margin-top: 18px;width: 860px">
+			 		
+			 		<center></br>
+			 		<label><h4>Search By : </h4></label>
+			 		<select name="search-as" style="width: 280px">
+								<option value="username">USERNAME</option>
+								<option value="skill">SKILL</option>
+					</select>
+			 		
+			 		<input type="text" name="searchlabel" placeholder="Enter Details to Search..." required="required" style="margin-top: 18px;width: 560px">
 			 		
 			 		<input type="submit" name="submit" value="View Details"  style="height: 48px;width: 138px;border-radius: 0;float: right;margin-top: 16px;
     							margin-right: 21px;" >
-			 	
- 			 	
+ 			 	</center>
 			 	</form>
+			 	
 			</div>
 
 			<div id="profile" class="tabcontent" style="height: 468px;">
