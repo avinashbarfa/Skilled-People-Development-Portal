@@ -36,11 +36,11 @@
 				</div>
 				<div class="col-md-6">
 					<label for="lname">Contact Number :</label> <input type="text"
-						name="tcontact" placeholder="Contact Number.." required="required" onchange="contactFunction()">
+						name="tcontact" id="contact" placeholder="Contact Number.." required="required" onchange="contactFunction()">
 				</div>
 				<div class="col-md-6">
 					<label for="zipcode">Zip Code :</label> <input type="text"
-						name="zip" placeholder="Pin Code" required="required" onchange="contactFunction()">
+						name="zip" id="zipcode" placeholder="Pin Code" required="required" onchange="pinFunction()">
 				</div>
 
 				<div class="col-md-6">
@@ -133,7 +133,7 @@ function contactFunction()
 	
 	if( x > 10 || x < 10)
 	{
-		alert("Pin Code Must Not be of 6 Digits.");
+		alert("Contact Number Must Not be of 10 Digits.");
 	}
 }	
 </script>
