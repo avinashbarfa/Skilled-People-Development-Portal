@@ -58,7 +58,7 @@ public class GenerateData extends HttpServlet {
 				String[] contactarr = { "9179686919", "7709244773", "7887554203" };
 				String random3 = (contactarr[new Random().nextInt(contactarr.length)]);
 
-				String[] skillarr = { "Tailor", "Agriculture", "Electrician", "Nursing", "Fabrication" };
+				String[] skillarr = { "Tailor", "Agriculture", "Electrician", "Nursing", "Fabrication", "Teacher" };
 				String random4 = (skillarr[new Random().nextInt(skillarr.length)]);
 
 				String[] statesarr = { "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh",
@@ -66,8 +66,11 @@ public class GenerateData extends HttpServlet {
 						"Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep",
 						"Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa",
 						"Pondicherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-						"Uttaranchal", "Uttar Pradesh", "West Bengal" };
+						"Uttarakhand", "Uttar Pradesh", "West Bengal" };
 				String random5 = (statesarr[new Random().nextInt(statesarr.length)]);
+
+				String[] citiesarr = {};
+				String random8 = (citiesarr[new Random().nextInt(citiesarr.length)]);
 
 				char[] pincd = "0123456789".toCharArray();
 				StringBuilder sb = new StringBuilder();
@@ -99,7 +102,7 @@ public class GenerateData extends HttpServlet {
 				String country = "India";
 				String state = random5;
 				String zip = sb.toString();
-				String city = sb1.toString();
+				String city = random8;
 				String status = "Not Employed";
 				String latitude = String.valueOf(i);
 				String longitutde = String.valueOf(j);

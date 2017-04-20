@@ -1,7 +1,6 @@
 package com.spep.unnati;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -40,10 +39,12 @@ public class TSignup extends HttpServlet {
 		String state = request.getParameter("state");
 		String city = request.getParameter("city");
 		String password = request.getParameter("passwd");
-		PrintWriter out = response.getWriter();
-		int i = SignupValidate.tValidate(organization, password, contact, country, state, zip, city);
+		String latitude = request.getParameter("latitude");
+		String longitude = request.getParameter("longitude");
+		int i = SignupValidate.tValidate(organization, password, contact, country, state, zip, city, latitude,
+				longitude);
 		if (i > 0) {
-		/*	out.println("You are successfully Registered!");*/
+			/* out.println("You are successfully Registered!"); */
 			HttpSession session = request.getSession();
 			session.setAttribute("Organization", organization);
 			response.sendRedirect("successsignup.jsp");

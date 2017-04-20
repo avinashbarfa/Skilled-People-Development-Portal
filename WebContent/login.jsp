@@ -66,7 +66,7 @@
 			<hr>
 
 			<div class="rights">
-				<h6>Some Contains are copied &copy; 2017</h6>
+				<h6>Some Contents are copied &copy; 2017</h6>
 			</div>
 		</div>
 	</div>

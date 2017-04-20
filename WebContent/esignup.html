@@ -36,11 +36,13 @@
 				</div>
 				<div class="col-md-6">
 					<label for="lname">Contact Number :</label> <input type="text"
-						name="contact" id="contact" placeholder="Contact Number.." required="required" onchange="contactFunction()">
+						name="contact" id="contact" placeholder="Contact Number.."
+						required="required" onchange="contactFunction()">
 				</div>
 				<div class="col-md-6">
 					<label for="zipcode">Zip Code :</label> <input type="text"
-						name="zipcode" id="zipcode" placeholder="Pin Code" required="required" onchange="pinFunction()">
+						name="zipcode" id="zipcode" placeholder="Pin Code"
+						required="required" onchange="pinFunction()">
 				</div>
 
 				<div class="col-md-6">
@@ -83,39 +85,58 @@
 					</select>
 				</div>
 				<div class="col-md-4">
-					<label for="city">City :</label> <input type="text" name="city"  id="txtAddress"
-						placeholder="City.." required="required">
+					<label for="city">City :</label> <input type="text" name="city"
+						id="txtAddress" placeholder="City.." required="required">
 
-   				</div>
-				<div class="col-md-2">
-					 <input type="button" style="margin-top: 32px;margin-right: 72PX;height: 40px;width: 113px;"onclick="GetLocation()" value="Get Location"/>
-	
 				</div>
-				
-		<script type="text/javascript">
-    
-	        function GetLocation() {
-	            var geocoder = new google.maps.Geocoder();
-	            var address = document.getElementById("txtAddress").value;
-	            geocoder.geocode({ 'address': address }, function (results, status) {
-	                if (status == google.maps.GeocoderStatus.OK) {
-	                    var latitude = results[0].geometry.location.lat();
-	                    var longitude = results[0].geometry.location.lng();
-	                    //alert("Latitude: " + latitude + "\nLongitude: " + longitude);
-	                	document.getElementById('demo1').innerHTML  = "Latitude: " + latitude;
-	                	document.getElementById('demo2').innerHTML  = "Longitude: " + longitude;
-	                } else {
-	                    alert("Request failed.")
-	                }
-	            });
-	        };
-        </script>
+				<div class="col-md-2">
+					<input type="button"
+						style="margin-top: 32px; margin-right: 72PX; height: 40px; width: 113px;"
+						onclick="GetLocation()" value="Get Location" />
+
+				</div>
+
+				<script type="text/javascript">
+					function GetLocation() {
+						var geocoder = new google.maps.Geocoder();
+						var address = document.getElementById("txtAddress").value;
+						geocoder
+								.geocode(
+										{
+											'address' : address
+										},
+										function(results, status) {
+											if (status == google.maps.GeocoderStatus.OK) {
+												var latitude = results[0].geometry.location
+														.lat();
+												var longitude = results[0].geometry.location
+														.lng();
+												//alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+												document
+														.getElementById('demo1').innerHTML = "Latitude: "
+														+ latitude;
+												document
+														.getElementById('demo2').innerHTML = "Longitude: "
+														+ longitude;
+												document
+														.getElementById('latitude').value = latitude;
+												document
+														.getElementById('longitude').value = longitude;
+
+											} else {
+												alert("Request failed.")
+											}
+										});
+					};
+				</script>
 				<div class="col-md-6">
 					<label for="password">Password :</label> <input type="password"
 						name="passwd" placeholder="Enter Password" required="required">
 				</div>
-				
-				<input style="margin-top:16px; margin-right:24px;" type="submit" value="submit">
+				<input type="hidden" name="latitude" id="latitude"> <input
+					type="hidden" name="longitude" id="longitude"> <input
+					style="margin-top: 16px; margin-right: 24px;" type="submit"
+					value="submit">
 			</form>
 			<div id="demo1" style="margin-left: 20px;" name="latitute"></div>
 			<div id="demo2" style="margin-left: 20px;" name="longitude"></div>
@@ -138,35 +159,31 @@
 			<hr>
 
 			<div class="rights">
-				<h6>Some Contains are copied &copy; 2017</h6>
+				<h6>Some Contents are copied &copy; 2017</h6>
 			</div>
 		</div>
 	</div>
 
 </body>
 <script>
+	function pinFunction() {
+		var x = document.getElementById('zipcode').value.length;
 
-function pinFunction()
-{
-	var x = document.getElementById('zipcode').value.length;
-	
-	if( x > 6 || x < 6)
-	{
-		alert("Pin Code Must Not be of 6 Digits.");
+		if (x > 6 || x < 6) {
+			alert("Pin Code Must Not be of 6 Digits.");
+		}
 	}
-}	
 
-function contactFunction()
-{
-	var x = document.getElementById('contact').value.length;
-	
-	if( x > 10 || x < 10)
-	{
-		alert("Contact Number Must be of 10 digits.");
+	function contactFunction() {
+		var x = document.getElementById('contact').value.length;
+
+		if (x > 10 || x < 10) {
+			alert("Contact Number Must be of 10 digits.");
+		}
 	}
-}	
 </script>
 
-<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBIWcz37GLZrMMHvyAZr-3UGiPU2-JzzBk"></script>
- 
+<script type="text/javascript"
+	src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBIWcz37GLZrMMHvyAZr-3UGiPU2-JzzBk"></script>
+
 </html>

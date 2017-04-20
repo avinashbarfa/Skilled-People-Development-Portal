@@ -50,11 +50,11 @@
 			<div class="card">
 			  	<img src="img/images.jpg" style="width:100%;height: 212px;">
 				    <h1>Apurv Singh</h1>
-				    <p class="title">Don't believe in my College</p>
-				    <p style="color: brown;">Stanford University</p>
+				    <p class="title">Cyber Security Analyst</p>
+				    <p style="color: brown;">Don't believe in College</p>
 				    <div style="margin: 24px 0;"> 
-				      <a href="https://in.linkedin.com/in/avinash-barfa-a53581116" target="blank"><i class="fa fa-linkedin"></i></a>  
-				      <a href="https://www.facebook.com/avibarfa98" target="blank"><i class="fa fa-facebook"></i></a> 
+				      <a href="https://in.linkedin.com/in/apurvsinghgautam" target="blank"><i class="fa fa-linkedin"></i></a>  
+				      <a href="https://www.facebook.com/apurvkfa" target="blank"><i class="fa fa-facebook"></i></a> 
 				  	</div>
 			   		<p><button>Contact</button></p>
 			</div>
@@ -91,7 +91,7 @@
 			<hr>
 
 			<div class="rights">
-				<h6>Some Contains are copied &copy; 2017</h6>
+				<h6>Some Contents are copied &copy; 2017</h6>
 			</div>
 		</div>
 	</div>	

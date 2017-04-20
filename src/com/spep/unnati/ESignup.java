@@ -1,7 +1,6 @@
 package com.spep.unnati;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -39,9 +38,9 @@ public class ESignup extends HttpServlet {
 		String state = request.getParameter("state");
 		String city = request.getParameter("city");
 		String password = request.getParameter("passwd");
-		String address = request.getParameter("add");
-		PrintWriter out = response.getWriter();
-		int i = SignupValidate.eValidate(organization, password, contact, country, state, zip, city, address);
+		String latitude = request.getParameter("latitude");
+		String longitude = request.getParameter("longitude");
+		int i = SignupValidate.eValidate(organization, password, contact, country, state, zip, city, latitude,longitude);
 		if (i > 0) {
 			/*	out.println("You are successfully Registered!");*/
 			HttpSession session = request.getSession();

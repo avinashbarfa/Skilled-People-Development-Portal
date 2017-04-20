@@ -18,19 +18,21 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet("/AddLabour")
 public class AddLabour extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public AddLabour() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public AddLabour() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		String name = request.getParameter("name");
@@ -41,16 +43,16 @@ public class AddLabour extends HttpServlet {
 		String country = request.getParameter("country");
 		String state = request.getParameter("state");
 		String city = request.getParameter("city");
-		String latitude = "none";
-		String longitutde = "none";
+		String latitude = request.getParameter("latitude");
+		String longitutde = request.getParameter("longitude");
 		String status = "Not Employed";
 		PrintWriter out = response.getWriter();
-		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
 			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-			PreparedStatement ps =conn.prepareStatement("INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,latitude,longitude,jobstatus) Values(?,?,?,?,?,?,?,?,?,?,?)");
-			ps.setString(1,name);
+			PreparedStatement ps = conn.prepareStatement(
+					"INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,latitude,longitude,jobstatus) Values(?,?,?,?,?,?,?,?,?,?,?)");
+			ps.setString(1, name);
 			ps.setString(2, contact);
 			ps.setString(3, gender);
 			ps.setString(4, skill);
@@ -61,16 +63,16 @@ public class AddLabour extends HttpServlet {
 			ps.setString(9, latitude);
 			ps.setString(10, longitutde);
 			ps.setString(11, status);
-			
+
 			int i = ps.executeUpdate();
-			
-			if(i > 0) {
-				out.println("Labour Is Successfull Registered !");
+
+			if (i > 0) {
+				out.println("Labour Is Successfully Registered !");
 			}
 		} catch (Exception ex) {
 			System.out.print(ex);
 		}
-		
+
 	}
 
 }

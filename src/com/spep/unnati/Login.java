@@ -40,7 +40,7 @@ public class Login extends HttpServlet {
 		if (option.equalsIgnoreCase("company")) {
 			if (LoginValidate.eValidate(uname, password)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("username", uname);
+				session.setAttribute("eusername", uname);
 				RequestDispatcher rd = request.getRequestDispatcher("employerdashboard.jsp");
 				rd.forward(request, response);
 			} else {
@@ -50,7 +50,7 @@ public class Login extends HttpServlet {
 		} else if (option.equalsIgnoreCase("iti")) {
 			if (LoginValidate.tValidate(uname, password)) {
 				HttpSession session = request.getSession();
-				session.setAttribute("username", uname);
+				session.setAttribute("tusername", uname);
 				RequestDispatcher rd = request.getRequestDispatcher("institutedashboard.jsp");
 				rd.forward(request, response);
 			} else {
