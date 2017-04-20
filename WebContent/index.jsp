@@ -17,15 +17,13 @@
 
 <body>
 
-	<div style="display:none;" id="myDiv" class="animate-bottom"></div>
-
 	<div class="nav"> 
 		<div class="container">
-			<a href="index.html"><img src="img/logo.png" style="float: left;"></a>
+			<a href="index.jsp"><img src="img/logo.png" style="float: left;"></a>
 			
 				<div class="nav-medium" id="myNavmedium">
   					<a href="#how IT WORKS">HOW IT WORKS</a>
-					<a href="#ABOUT">ABOUT US</a>
+					<a href="about.jsp">ABOUT US</a>
 					<a href="signup.html"><span class="glyphicon glyphicon-log-in">&nbsp;</span>SIGN UP</a>
 					<a href="login.jsp"><span class="glyphicon glyphicon-log-in">&nbsp;</span>LOGIN</a>
 					<a href="javascript:void(0);" class="icon" onclick="myNavigation()">&#9776;</a>
@@ -33,7 +31,6 @@
 			
 		</div>
 	</div>
-<nav></nav>
 
 	<div class="slider">
 			<img src="img/banner4.png">

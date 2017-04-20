@@ -19,7 +19,7 @@
 
 	<div class="top-header">
 		<div class="container">
-			<a href="index.html"><img src="img/logo.png" style="float: left;"></a>
+			<a href="index.jsp"><img src="img/logo.png" style="float: left;"></a>
 			<a href="signup.html" style="float: right; padding-top: 12px;"><span
 				class="glyphicon glyphicon-log-in">&nbsp;</span>SIGN UP</a>
 		</div>
@@ -82,10 +82,34 @@
 						<option value="West Bengal">West Bengal</option>
 					</select>
 				</div>
-				<div class="col-md-6">
-					<label for="city">City :</label> <input type="text" name="city"
+				<div class="col-md-4">
+					<label for="city">City :</label> <input type="text" name="city"  id="txtAddress"
 						placeholder="City.." required="required">
+
+   				</div>
+				<div class="col-md-2">
+					 <input type="button" style="margin-top: 32px;margin-right: 72PX;height: 40px;width: 113px;"onclick="GetLocation()" value="Get Location"/>
+	
 				</div>
+				
+		<script type="text/javascript">
+    
+	        function GetLocation() {
+	            var geocoder = new google.maps.Geocoder();
+	            var address = document.getElementById("txtAddress").value;
+	            geocoder.geocode({ 'address': address }, function (results, status) {
+	                if (status == google.maps.GeocoderStatus.OK) {
+	                    var latitude = results[0].geometry.location.lat();
+	                    var longitude = results[0].geometry.location.lng();
+	                    //alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+	                	document.getElementById('demo1').innerHTML  = "Latitude: " + latitude;
+	                	document.getElementById('demo2').innerHTML  = "Longitude: " + longitude;
+	                } else {
+	                    alert("Request failed.")
+	                }
+	            });
+	        };
+        </script>
 				<div class="col-md-6">
 					<label for="password">Password :</label> <input type="password"
 						name="passwd" placeholder="Enter Password" required="required">
@@ -93,6 +117,8 @@
 				
 				<input style="margin-top:16px; margin-right:24px;" type="submit" value="submit">
 			</form>
+			<div id="demo1" style="margin-left: 20px;" name="latitute"></div>
+			<div id="demo2" style="margin-left: 20px;" name="longitude"></div>
 		</div>
 	</div>
 
@@ -140,4 +166,7 @@ function contactFunction()
 	}
 }	
 </script>
+
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBIWcz37GLZrMMHvyAZr-3UGiPU2-JzzBk"></script>
+ 
 </html>

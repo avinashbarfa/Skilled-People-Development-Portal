@@ -14,7 +14,7 @@
 
 	<div class="top-header">
 		<div class="container">
-			<a href="index.html"><img src="img/logo.png" style="float: left;"></a>
+			<a href="index.jsp"><img src="img/logo.png" style="float: left;"></a>
 			<a href="signup.html" style="float: right;padding-top: 12px;"><span class="glyphicon glyphicon-log-in">&nbsp;</span>SIGN UP</a>
 		</div>
 	</div>

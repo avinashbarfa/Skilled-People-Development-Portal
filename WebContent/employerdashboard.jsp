@@ -34,7 +34,7 @@
 
 	<div class="top-header">
 		<div class="container">
-			<a href="index.html"><img src="img/logo.png" style="float: left;"></a>
+			<a href="employerdashboard.jsp"><img src="img/logo.png" style="float: left;"></a>
 			<a href="Logout" style="float: right; padding-top: 12px;"><span
 				class="glyphicon glyphicon-log-out"></span>&nbsp;LOGOUT</a>
 		</div>
@@ -58,7 +58,7 @@
 					
 			</div>
 
-			<div id="viewLabour" class="tabcontent">
+			<div id="viewLabour" class="tabcontent" style="height:320px;">
 				
 				<h3 style="text-align: center;color: darkcyan;">View Labour Details</h3>
 				<form action="SearchLabour" method="POST">
@@ -217,6 +217,6 @@
 			    x.style.display = 'none';
 			 }  
 	  }
-	
+
 	</script>
 </html>

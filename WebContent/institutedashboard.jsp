@@ -36,7 +36,7 @@
 
 	<div class="top-header">
 		<div class="container">
-			<a href="index.html"><img src="img/logo.png" style="float: left;"></a>
+			<a href="institutedashboard.jsp"><img src="img/logo.png" style="float: left;"></a>
 			<a href="Logout" style="float: right;padding-top: 12px;"><span class="glyphicon glyphicon-log-out"></span>&nbsp;LOGOUT</a>
 		</div>
 	</div>
@@ -53,89 +53,117 @@
 			<div id="addlabour" class="tabcontent" style="height: 720px;">
 				<h3 style="text-align: center;color: darkcyan;">Add Labour</h3>
 				<form action="AddLabour" method="POST">
-			    <div class="col-md-12">	
-			    	<label for="fname">Full Name :</label>
-			    	<input type="text" name="name" placeholder="Enter Full Name.." required="required">
-			    </div>
-			    <div class="col-md-6">
-			   		<label for="lname">Contact Number :</label>
-			    	<input type="text" name="contact" placeholder="Contact Number.." required="required">
-			    </div>
-			    <div class="col-md-6">
-			    	<label for="zipcode">Zip Code :</label>
-			    	<input type="text" name="zip" placeholder="Pin Code" required="required">
-			    </div>
-			    <div class="col-md-6">
-			    	<label for="gender">Gender :</label>
-			    	 <select name="gender">
-	 		        	<option value="male">Male</option>
-					 	<option value="female">Female</option>
-					 </select>	
-			    </div>
-			    <div class="col-md-6">
-			    	<label for="skill">Skill :</label>
-			    	<select name="skill">
-	 		        	<option value="tailor">Tailoring</option>
-					 	<option value="data1">Tailoring</option>
-					 	<option value="data2">Tailoring</option>
-					 	<option value="data3">Tailoring</option>
-					 	<option value="data4">Tailoring</option>
-					 	<option value="data5">Tailoring</option>
-					 </select>
-			    </div>
-
-			    <div class="col-md-6">
-			    	<label for="country">Country :</label>
-			    	<select id="country" name="country">
- 		        		<option value="India">India</option>
-				 	</select>
-				</div>
-				<div class="col-md-6">
-					<label for="state">State :</label>
-				    <select id="state" name="state">
-	 		        	<option value="Andra Pradesh">Andra Pradesh</option>
-					 	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-					 	<option value="Assam">Assam</option>
-					 	<option value="Bihar">Bihar</option>
-					 	<option value="Chhattisgarh">Chhattisgarh</option>
-					 	<option value="Goa">Goa</option>
-					 	<option value="Gujarat">Gujarat</option>
-					 	<option value="Haryana">Haryana</option>
-					 	<option value="Himachal Pradesh">Himachal Pradesh</option>
-					 	<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-					 	<option value="Jharkhand">Jharkhand</option>
-					 	<option value="Karnataka">Karnataka</option>
-					 	<option value="Kerala">Kerala</option>
-					 	<option value="Madhya Pradesh">Madhya Pradesh</option>
-					 	<option value="Maharashtra">Maharashtra</option>
-					 	<option value="Manipur">Manipur</option>
-					 	<option value="Meghalaya">Meghalaya</option>
-					 	<option value="Mizoram">Mizoram</option>
-					 	<option value="Nagaland">Nagaland</option>
-					 	<option value="Odisha">Odisha</option>
-					 	<option value="Punjab">Punjab</option>
-					 	<option value="Rajasthan">Rajasthan</option>
-					 	<option value="Sikkim">Sikkim</option>
-					 	<option value="Tamil Nadu">Tamil Nadu</option>
-					 	<option value="Telangana">Telangana</option>
-					 	<option value="Tripura">Tripura</option>
-					 	<option value="Uttar Pradesh">Uttar Pradesh</option>
-					 	<option value="Uttarakhand">Uttarakhand</option>
-					 	<option value="West Bengal">West Bengal</option>
-					 </select>
-				</div>
-				<div class="col-md-12">	
-			    	<label for="city">City :</label>
-			    	<input type="text" name="city" placeholder="City" required="required">
-			    </div>
-			    <div class="col-md-12">	
-			    	<label for="address">Address :</label>
-			    	<input type="text" name="add" placeholder="Enter Address : " required="required">
-			    </div>
-				<input type="submit" value="Submit" style="height: 48px;width: 138px;border-radius: 0;float: right;margin-top: 50px;
-    							margin-right: 21px;">
+				    <div class="col-md-12">	
+				    	<label for="fname">Full Name :</label>
+				    	<input type="text" name="name" placeholder="Enter Full Name.." required="required">
+				    </div>
+				    <div class="col-md-6">
+				   		<label for="lname">Contact Number :</label>
+				    	<input type="text" name="contact" placeholder="Contact Number.." required="required">
+				    </div>
+				    <div class="col-md-6">
+				    	<label for="zipcode">Zip Code :</label>
+				    	<input type="text" name="zip" placeholder="Pin Code" required="required">
+				    </div>
+				    <div class="col-md-6">
+				    	<label for="gender">Gender :</label>
+				    	 <select name="gender">
+		 		        	<option value="male">Male</option>
+						 	<option value="female">Female</option>
+						 </select>	
+				    </div>
+				    <div class="col-md-6">
+				    	<label for="skill">Skill :</label>
+				    	<select name="skill">
+		 		        	<option value="tailor">Tailoring</option>
+						 	<option value="data1">Tailoring</option>
+						 	<option value="data2">Tailoring</option>
+						 	<option value="data3">Tailoring</option>
+						 	<option value="data4">Tailoring</option>
+						 	<option value="data5">Tailoring</option>
+						 </select>
+				    </div>
+	
+				    <div class="col-md-6">
+				    	<label for="country">Country :</label>
+				    	<select id="country" name="country">
+	 		        		<option value="India">India</option>
+					 	</select>
+					</div>
+					<div class="col-md-6">
+						<label for="state">State :</label>
+					    <select id="state" name="state">
+		 		        	<option value="Andra Pradesh">Andra Pradesh</option>
+						 	<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+						 	<option value="Assam">Assam</option>
+						 	<option value="Bihar">Bihar</option>
+						 	<option value="Chhattisgarh">Chhattisgarh</option>
+						 	<option value="Goa">Goa</option>
+						 	<option value="Gujarat">Gujarat</option>
+						 	<option value="Haryana">Haryana</option>
+						 	<option value="Himachal Pradesh">Himachal Pradesh</option>
+						 	<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+						 	<option value="Jharkhand">Jharkhand</option>
+						 	<option value="Karnataka">Karnataka</option>
+						 	<option value="Kerala">Kerala</option>
+						 	<option value="Madhya Pradesh">Madhya Pradesh</option>
+						 	<option value="Maharashtra">Maharashtra</option>
+						 	<option value="Manipur">Manipur</option>
+						 	<option value="Meghalaya">Meghalaya</option>
+						 	<option value="Mizoram">Mizoram</option>
+						 	<option value="Nagaland">Nagaland</option>
+						 	<option value="Odisha">Odisha</option>
+						 	<option value="Punjab">Punjab</option>
+						 	<option value="Rajasthan">Rajasthan</option>
+						 	<option value="Sikkim">Sikkim</option>
+						 	<option value="Tamil Nadu">Tamil Nadu</option>
+						 	<option value="Telangana">Telangana</option>
+						 	<option value="Tripura">Tripura</option>
+						 	<option value="Uttar Pradesh">Uttar Pradesh</option>
+						 	<option value="Uttarakhand">Uttarakhand</option>
+						 	<option value="West Bengal">West Bengal</option>
+						 </select>
+					</div>
+					
+					<div class="col-md-4">
+						<label for="city">City :</label> <input type="text" name="city"  id="txtAddress"
+							placeholder="City.." required="required">
+	
+	   				</div>
+					<div class="col-md-2">
+						 <input type="button" style="margin-top: 32px;margin-right: 72PX;height: 40px;width: 113px;"onclick="GetLocation()" value="Get Location"/>
+		
+					</div>
+					<script type="text/javascript">
+			    
+				        function GetLocation() {
+				            var geocoder = new google.maps.Geocoder();
+				            var address = document.getElementById("txtAddress").value;
+				            geocoder.geocode({ 'address': address }, function (results, status) {
+				                if (status == google.maps.GeocoderStatus.OK) {
+				                    var latitude = results[0].geometry.location.lat();
+				                    var longitude = results[0].geometry.location.lng();
+				                    //alert("Latitude: " + latitude + "\nLongitude: " + longitude);
+				                	document.getElementById('demo9').innerHTML  = "Latitude: " + latitude;
+				                	document.getElementById('demo10').innerHTML  = "Longitude: " + longitude;
+				                } else {
+				                    alert("Request failed.")
+				                }
+				            });
+				        };
+			        </script>
+					<div class="col-md-6" style="margin-top: 35px;">
+						<div id="demo9" style="margin-left: 20px;" name="latitute"></div>
+						<div id="demo10" style="margin-left: 20px;" name="longitude"></div>
+					</div>
+						
+					<input type="submit" value="Submit" style="height: 48px;width: 138px;border-radius: 0;float: right;margin-top: 50px;
+	    							margin-right: 21px;">
+	    						
 			</form>
-			</div>
+			
+			
+		</div>
 
 			<div id="viewLabour" class="tabcontent" style="height:320px;">
 			
@@ -143,7 +171,7 @@
 				
 			 	<form action="SearchLabour" method="POST">
 			 		
-			 		<center></br>
+			 		<center><br>
 			 		<div class="col-md-4">
 			 		<label><h4>Search By : </h4></label>
 			 			<select name="search-as" id="search" style="width: 160px"  onchange="GetSelectedTextValue()">
@@ -271,7 +299,7 @@
 		</div>
 	</div>	
 </body>
-	<script src="js/main.js"></script>
+	
 	<script>
 		function GetSelectedTextValue() {
 	        var selectedText = document.getElementById('search').value;
@@ -301,4 +329,7 @@
 	  }
 	
 	</script>
+<script src="js/main.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=AIzaSyBIWcz37GLZrMMHvyAZr-3UGiPU2-JzzBk"></script>
+ 
 </html>

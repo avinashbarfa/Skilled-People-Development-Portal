@@ -30,32 +30,31 @@
 			
 		</div>
 	</div>
+	<img src="img/images.png" style="padding-left: 34%;"/>
+	
 	<div class="container" style="margin-top: 52px;margin-bottom: 100px;">
 		<div class="col-md-4">
 			<div class="card">
-			  	<img src="img/avi.jpg" alt="John" style="width:100%">
+			  	<img src="img/avi.jpg"  style="width:100%;height: 212px;">
 				    <h1>Avinash Barfa</h1>
-				    <p class="title">CEO & Founder, Example</p>
-				    <p>Harvard University</p>
+				    <p class="title">CEO & Founder</p>
+				    <p style="color: brown;">Symbiosis Institute of Technology,Pune</p>
 				    <div style="margin: 24px 0;"> 
-				      <a href="#"><i class="fa fa-twitter"></i></a>  
-				      <a href="#"><i class="fa fa-linkedin"></i></a>  
-				      <a href="#"><i class="fa fa-facebook"></i></a> 
-				  	</div>
+				      <a href="https://in.linkedin.com/in/avinash-barfa-a53581116" target="blank"><i class="fa fa-linkedin"></i></a>  
+				      <a href="https://www.facebook.com/avibarfa98" target="blank"><i class="fa fa-facebook"></i></a></div>
 			   		<p><button>Contact</button></p>
 			</div>
 		</div>
 	
 		<div class="col-md-4">
 			<div class="card">
-			  	<img src="img/avi.jpg" alt="John" style="width:100%">
-				    <h1>John Doe</h1>
-				    <p class="title">CEO & Founder, Example</p>
-				    <p>Harvard University</p>
+			  	<img src="img/images.jpg" style="width:100%;height: 212px;">
+				    <h1>Apurv Singh</h1>
+				    <p class="title">Don't believe in my College</p>
+				    <p style="color: brown;">Stanford University</p>
 				    <div style="margin: 24px 0;"> 
-				      <a href="#"><i class="fa fa-twitter"></i></a>  
-				      <a href="#"><i class="fa fa-linkedin"></i></a>  
-				      <a href="#"><i class="fa fa-facebook"></i></a> 
+				      <a href="https://in.linkedin.com/in/avinash-barfa-a53581116" target="blank"><i class="fa fa-linkedin"></i></a>  
+				      <a href="https://www.facebook.com/avibarfa98" target="blank"><i class="fa fa-facebook"></i></a> 
 				  	</div>
 			   		<p><button>Contact</button></p>
 			</div>
@@ -63,12 +62,11 @@
 	
 		<div class="col-md-4">
 			<div class="card">
-			  	<img src="img/avi.jpg" alt="John" style="width:100%">
-				    <h1>John Doe</h1>
-				    <p class="title">CEO & Founder, Example</p>
-				    <p>Harvard University</p>
+			  	<img src="img/rushin.png" style="width:100%;height: 212px;">
+				    <h1>Rushin Tilva</h1>
+				    <p class="title">Only Focus on Andriod</p>
+				    <p style="color: brown;">Don't believe in my College</p>
 				    <div style="margin: 24px 0;"> 
-				      <a href="#"><i class="fa fa-twitter"></i></a>  
 				      <a href="#"><i class="fa fa-linkedin"></i></a>  
 				      <a href="#"><i class="fa fa-facebook"></i></a> 
 				  	</div>
