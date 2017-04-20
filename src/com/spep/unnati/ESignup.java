@@ -43,10 +43,10 @@ public class ESignup extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		int i = SignupValidate.eValidate(organization, password, contact, country, state, zip, city, address);
 		if (i > 0) {
-			out.println("You are successfully Registered!");
+			/*	out.println("You are successfully Registered!");*/
 			HttpSession session = request.getSession();
 			session.setAttribute("Organization", organization);
-			response.sendRedirect("login.html");
+			response.sendRedirect("successsignup.jsp");
 		}
 	}
 }

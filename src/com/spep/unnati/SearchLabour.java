@@ -34,113 +34,140 @@ public class SearchLabour extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
-		String label = request.getParameter("searchlabel");
 		String option = request.getParameter("search-as");
-		
+		String innerskill = request.getParameter("skill-wise");
+		String innerstate = request.getParameter("state-wise");
+		String label2 ="null";
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+				Class.forName("com.mysql.jdbc.Driver");
                            
-             if (option.equalsIgnoreCase("skill"))
-             {
-            	 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-    			 PreparedStatement ps=conn.prepareStatement("select * from labour where skill=?");
-    			 ps.setString(1, label);  
-    			 
-    			 out.println("<body style='background-color:transparent;'>");
-                 out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
-            	 
-                 /* Printing column names */  
-                 ResultSet rs=ps.executeQuery();  
-                 ResultSetMetaData rsmd=rs.getMetaData();  
-              	  
-            	 out.print("<table style='margin-left: 100px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:1150px;'>");
-             	
-            	 int total=rsmd.getColumnCount();  
-            	 out.print("<tr>");  
-            	   
-            	 
-            	 out.print("<td><h5>Full Name</h5></td>"); 
-            	 out.print("<td><h5> Contact Number</h5></td>"); 
-            	 out.print("<td><h5>Gender</h5></td>"); 
-            	 out.print("<td><h5>Skill Knows</h5></td>"); 
-            	 out.print("<td><h5>Country</h5></td>"); 
-            	 out.print("<td><h5>State</h5></td>"); 
-            	 out.print("<td><h5>Pin Code</h5></td>"); 
-            	 out.print("<td><h5>City</h5></td>"); 
-            	 out.print("<td><h5>Job Status</h5></td>"); 
-            	 out.print("<td><h5>Date Of Registration</h5></td>");        	 
-            	   
-            	 out.print("</tr>");  
-            	               
-            	 /* Printing result */  
-            	 out.println("</br>");  
-            	 while(rs.next())  
-            	 {  
-            		 out.print("<tr><td>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td><td>"+rs.getString(7)+"</td><td>"+rs.getString(8)+"</td><td>"+rs.getString(9)+"</td><td>"+rs.getString(12)+"</td><td>"+rs.getString(13)+"</td></tr>");  
-            		             
-            	 }   
-                    
-                  out.print("</tr>");
-                  out.print("</table>");
-             }
-             
-             else if (option.equalsIgnoreCase("username"))
-             {
-            	 /* Printing result */  
-            	 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-    			 PreparedStatement ps=conn.prepareStatement("select * from labour where fullname=?");
-    			 ps.setString(1, label);  
-    			
-    			 out.println("<body style='background-color:transparent;'>");
-                 out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
-            	 
-                 ResultSet rs=ps.executeQuery();    
-            	 out.print("<table style='margin-left: 300px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:800px;'>");
-            	 
-            	 while(rs.next())  
-                 {  
-                    out.print("<tr>");
-                    out.print("<td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Sr. No"+"</td>");
-                    out.print("<td>"+rs.getString(1)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Full Name :"+"</td>");
-                    out.print("<td>"+rs.getString(2)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Contact Number :"+"</td>");
-                    out.print("<td>"+rs.getString(3)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Gender :"+"</td>");
-                    out.print("<td>"+rs.getString(4)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Skill Knows :"+"</td>");
-                    out.print("<td>"+rs.getString(5)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Country :"+"</td>");
-                    out.print("<td>"+rs.getString(6)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"State :"+"</td>");
-                    out.print("<td>"+rs.getString(7)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Pin Code :"+"</td>");
-                    out.print("<td>"+rs.getString(8)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"City :"+"</td>");
-                    out.print("<td>"+rs.getString(9)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Job Status : "+"</td>");
-                    out.print("<td>"+rs.getString(12)+"</td></tr>");
-                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Date Of Registration :"+"</td>");
-                    out.print("<td>"+rs.getString(13)+"</td></tr>");
-                 }  
-       
-            	 out.print("</table>");
-             }
-             else
-             {
-            	 out.println("error in Searching");
-             }
-            
-             
-             out.print("<h4 style='text-align: center;margin-top: 24px;'><a style='text-decoration: none;' href='institutedashboard.jsp'>Go Back to the Dashbaord</a>");
-      }catch (Exception e2)
-        {
-            e2.printStackTrace();
-        }
-		
-      finally{out.close();
+	             if (option.equalsIgnoreCase("skill"))
+	             {
+	            	 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
+	    			 PreparedStatement ps=conn.prepareStatement("select * from labour where skill=?");
+	    			 
+	    			 if(innerskill.equalsIgnoreCase("Tailor"))
+	    			 {	 
+		    			
+						label2 = "Tailor";
+	    			 }
+	    			 else if(innerskill.equalsIgnoreCase("Agriculture"))
+	    			 {
+	    				 label2 = "Agriculture";
+	    			 }
+	    			 else if(innerskill.equalsIgnoreCase("Nursing"))
+	    			 {
+	    				 label2 = "Nursing";
+	    			 }
+	    			 else if(innerskill.equalsIgnoreCase("Fabrication"))
+	    			 {
+	    				 label2 = "Fabrication";
+	    			 }
+	    			 else if(innerskill.equalsIgnoreCase("Electrican"))
+	    			 {
+	    				 label2 = "Electrican";
+	    			 }
+	    			 else
+		             {
+		            	 out.println("<h2>Error Ocurrened While Searching. Contact Avinash Barfa</p>");
+		             }
+					 ps.setString(1, label2);  
+	    			 
+	    			 out.println("<body style='background-color:transparent;'>");
+	                 out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
+	            	 
+	                 /* Printing column names */  
+	                 ResultSet rs=ps.executeQuery();  
+	                 ResultSetMetaData rsmd=rs.getMetaData();  
+	              
+	            	 out.print("<table style='margin-left: 100px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:1150px;border-spacing: 0;border: 1px solid #ddd;'");        	
+	            	 int total=rsmd.getColumnCount();  
+	            	 out.print("<tr>");  
+	            	   
+	            	 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Full Name</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Contact Number</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Gender</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Skill Knows</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Country</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>State</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Pin Code</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>City</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Job Status</h5></td>"); 
+	            	 out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Date Of Registration</h5></td>");        	 
+	            	   
+	            	 out.print("</tr>");  
+	            	               
+	            	 /* Printing result */  
+	            	 out.println("</br>");  
+	            	 while(rs.next())  
+	            	 {  
+	            		 out.print("<tr><td style='border: none;text-align: left;padding: 8px;'>"+rs.getString(2)+"</td><td>"+rs.getString(3)+"</td><td>"+rs.getString(4)+"</td><td>"+rs.getString(5)+"</td><td>"+rs.getString(6)+"</td><td>"+rs.getString(7)+"</td><td>"+rs.getString(8)+"</td><td>"+rs.getString(9)+"</td><td>"+rs.getString(12)+"</td><td>"+rs.getString(13)+"</td></tr>");  
+	            		             
+	            	 }   
+	                    
+	                  out.print("</tr>");
+	                  out.print("</table>");
+	             }     
 			
-		}
+	             else if (option.equalsIgnoreCase("username"))
+	             {
+	            	 /* Printing result */  
+	            	 String label = request.getParameter("searchlabel");
+	         		
+	            	 Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
+	    			 PreparedStatement ps=conn.prepareStatement("select * from labour where fullname=?");
+	    			 ps.setString(1, label);  
+	    			
+	    			 out.println("<body style='background-color:transparent;'>");
+	                 out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
+	            	 
+	                 ResultSet rs=ps.executeQuery();    
+	            	 out.print("<table style='margin-left: 300px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:800px;'>");
+	            	 
+	            	 while(rs.next())  
+	                 {  
+	                    out.print("<tr>");
+	                    out.print("<td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Sr. No"+"</td>");
+	                    out.print("<td>"+rs.getString(1)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Full Name :"+"</td>");
+	                    out.print("<td>"+rs.getString(2)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Contact Number :"+"</td>");
+	                    out.print("<td>"+rs.getString(3)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Gender :"+"</td>");
+	                    out.print("<td>"+rs.getString(4)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Skill Knows :"+"</td>");
+	                    out.print("<td>"+rs.getString(5)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Country :"+"</td>");
+	                    out.print("<td>"+rs.getString(6)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"State :"+"</td>");
+	                    out.print("<td>"+rs.getString(7)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Pin Code :"+"</td>");
+	                    out.print("<td>"+rs.getString(8)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"City :"+"</td>");
+	                    out.print("<td>"+rs.getString(9)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Job Status : "+"</td>");
+	                    out.print("<td>"+rs.getString(12)+"</td></tr>");
+	                    out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"+"Date Of Registration :"+"</td>");
+	                    out.print("<td>"+rs.getString(13)+"</td></tr>");
+	                 }  
+	       
+	            	 out.print("</table>");
+	             }
+	             else
+	             {
+	            	 out.println("error in Searching");
+	             }
+	             out.print("<h4 style='text-align: center;margin-top: 24px;'><a style='text-decoration: none;' href='institutedashboard.jsp'>Go Back to the Dashbaord</a>");
+    
+			}catch (Exception e2)
+		        {
+		            e2.printStackTrace();
+		        }
+		
+	      finally{out.close();
+				
+			}
 	}
 
 }
