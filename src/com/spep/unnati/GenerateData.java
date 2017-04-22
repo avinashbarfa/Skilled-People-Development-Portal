@@ -61,16 +61,25 @@ public class GenerateData extends HttpServlet {
 				String[] skillarr = { "Tailor", "Agriculture", "Electrician", "Nursing", "Fabrication", "Teacher" };
 				String random4 = (skillarr[new Random().nextInt(skillarr.length)]);
 
-				String[] statesarr = { "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chandigarh",
-						"Chhattisgarh", "Dadra and Nagar Haveli", "Daman and Diu", "Delhi", "Goa", "Gujarat", "Haryana",
-						"Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka", "Kerala", "Lakshadweep",
-						"Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland", "Orissa",
-						"Pondicherry", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura",
-						"Uttarakhand", "Uttar Pradesh", "West Bengal" };
+				String[] statesarr = { "Andhra Pradesh", "Arunachal Pradesh", "Assam", "Bihar", "Chhattisgarh", "Goa",
+						"Gujarat", "Haryana", "Himachal Pradesh", "Jammu and Kashmir", "Jharkhand", "Karnataka",
+						"Kerala", "Madhya Pradesh", "Maharashtra", "Manipur", "Meghalaya", "Mizoram", "Nagaland",
+						"Odisha", "Punjab", "Rajasthan", "Sikkim", "Tamil Nadu", "Telangana", "Tripura", "Uttarakhand",
+						"Uttar Pradesh", "West Bengal" };
 				String random5 = (statesarr[new Random().nextInt(statesarr.length)]);
 
-				String[] citiesarr = {};
-				String random8 = (citiesarr[new Random().nextInt(citiesarr.length)]);
+				String[] citiesarr = { "London", "Manchester", "Bristol", "Liverpool", "Edinburgh", "Glasgow", "Leeds",
+						"Candiff", "Sheffield", "York", "Brighton", "Belfast", "Cambridge", "Portsmouth", "Coventry",
+						"Aberdeen", "Ocford", "Norwich", "Plymouth", "Swansea", "Leicester", "Southampton", "Bath",
+						"Exeter", "Dundee" };
+				String random7 = (citiesarr[new Random().nextInt(citiesarr.length)]);
+
+				String[] labstatus = { "Employed", "Not Employed" };
+				String random8 = (labstatus[new Random().nextInt(labstatus.length)]);
+
+				String[] cmpemployed = { "Reliance Industries", "Tata", "Amul", "Archies", "Bajaj Auto",
+						"Bharti Airtel", "Spice Digital" };
+				String random9 = (cmpemployed[new Random().nextInt(cmpemployed.length)]);
 
 				char[] pincd = "0123456789".toCharArray();
 				StringBuilder sb = new StringBuilder();
@@ -79,14 +88,12 @@ public class GenerateData extends HttpServlet {
 					char c = pincd[random6.nextInt(pincd.length)];
 					sb.append(c);
 				}
-
-				char[] chars = "abcdefghijklmnopqrstuvwxyz".toCharArray();
-				StringBuilder sb1 = new StringBuilder();
-				Random random7 = new Random();
-				for (int k = 0; k < 5; k++) {
-					char c = chars[random7.nextInt(chars.length)];
-					sb1.append(c);
-				}
+				String status = random8;
+				String employedin;
+				if (status == "Employed") {
+					employedin = random9;
+				} else
+					employedin = "";
 
 				String name = random1 + " " + random2;
 				String contact = random3;
@@ -102,18 +109,15 @@ public class GenerateData extends HttpServlet {
 				String country = "India";
 				String state = random5;
 				String zip = sb.toString();
-				String city = random8;
-				String status = "Not Employed";
+				String city = random7;
 				String latitude = String.valueOf(i);
 				String longitutde = String.valueOf(j);
-				String dirlatitude = "N";
-				String dirlongitude = "S";
 
 				try {
 					Class.forName("com.mysql.jdbc.Driver");
 					Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
 					PreparedStatement ps = conn.prepareStatement(
-							"INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,latitude,longitude,jobstatus,dirlatitude,dirlongitude) Values(?,?,?,?,?,?,?,?,?,?,?,?,?)");
+							"INSERT INTO labour (fullname,contact,gender,skill,country,state,zip,city,latitude,longitude,jobstatus,employedin) Values(?,?,?,?,?,?,?,?,?,?,?,?)");
 					ps.setString(1, name);
 					ps.setString(2, contact);
 					ps.setString(3, gender);
@@ -125,8 +129,7 @@ public class GenerateData extends HttpServlet {
 					ps.setString(9, latitude);
 					ps.setString(10, longitutde);
 					ps.setString(11, status);
-					ps.setString(12, dirlatitude);
-					ps.setString(13, dirlongitude);
+					ps.setString(12, employedin);
 
 					int y = ps.executeUpdate();
 

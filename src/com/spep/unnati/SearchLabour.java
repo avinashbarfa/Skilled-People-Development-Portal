@@ -12,9 +12,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 //import javax.servlet.http.HttpSession;
+import javax.servlet.http.HttpSession;
 
 /**
- * Servlet implementation class SearchLabour
+ * Servlet implementation class InstituteSearchLabour
  */
 @WebServlet("/SearchLabour")
 public class SearchLabour extends HttpServlet {
@@ -37,6 +38,9 @@ public class SearchLabour extends HttpServlet {
 		// TODO Auto-generated method stub
 		response.setContentType("text/html");
 		PrintWriter out = response.getWriter();
+		HttpSession check_session1 = request.getSession(false);
+		String uname = (String) check_session1.getAttribute("eusername");
+		System.out.println(uname);
 		String option = request.getParameter("search-as");
 		String innerskill = request.getParameter("skill-wise");
 		String innerstate = request.getParameter("state-wise");
@@ -46,10 +50,10 @@ public class SearchLabour extends HttpServlet {
 
 			if (option.equalsIgnoreCase("skill")) {
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-				PreparedStatement ps = conn.prepareStatement("select * from labour where skill=?");
+				PreparedStatement ps = conn
+						.prepareStatement("select * from labour where skill=? and jobstatus=? and employedin=?");
 
 				if (innerskill.equalsIgnoreCase("Tailor")) {
-
 					label2 = "Tailor";
 				} else if (innerskill.equalsIgnoreCase("Agriculture")) {
 					label2 = "Agriculture";
@@ -63,6 +67,8 @@ public class SearchLabour extends HttpServlet {
 					out.println("<h2>Error Ocurrened While Searching. Contact The Team</p>");
 				}
 				ps.setString(1, label2);
+				ps.setString(2, "Employed");
+				ps.setString(3, uname);
 
 				out.println("<body style='background-color:transparent;'>");
 				out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
@@ -85,6 +91,7 @@ public class SearchLabour extends HttpServlet {
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Pin Code</h5></td>");
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>City</h5></td>");
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Job Status</h5></td>");
+				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>EmployedIn</h5></td>");
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Date Of Registration</h5></td>");
 
 				out.print("</tr>");
@@ -96,7 +103,8 @@ public class SearchLabour extends HttpServlet {
 							+ "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>"
 							+ rs.getString(5) + "</td><td>" + rs.getString(6) + "</td><td>" + rs.getString(7)
 							+ "</td><td>" + rs.getString(8) + "</td><td>" + rs.getString(9) + "</td><td>"
-							+ rs.getString(12) + "</td><td>" + rs.getString(13) + "</td></tr>");
+							+ rs.getString(12) + "</td><td>" + rs.getString(13) + "</td><td>" + rs.getString(14)
+							+ "</td></tr>");
 
 				}
 
@@ -104,7 +112,8 @@ public class SearchLabour extends HttpServlet {
 				out.print("</table>");
 			} else if (option.equalsIgnoreCase("state")) {
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-				PreparedStatement ps = conn.prepareStatement("select * from labour where state=?");
+				PreparedStatement ps = conn
+						.prepareStatement("select * from labour where state=? and jobstatus=? and employedin=?");
 
 				if (innerstate.equalsIgnoreCase("Andra Pradesh")) {
 
@@ -169,6 +178,8 @@ public class SearchLabour extends HttpServlet {
 					out.println("<h2>Error Ocurrened While Searching. Contact The Team</p>");
 				}
 				ps.setString(1, label2);
+				ps.setString(2, "Employed");
+				ps.setString(3, uname);
 
 				out.println("<body style='background-color:transparent;'>");
 				out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
@@ -191,6 +202,7 @@ public class SearchLabour extends HttpServlet {
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Pin Code</h5></td>");
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>City</h5></td>");
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Job Status</h5></td>");
+				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>EmployedIn</h5></td>");
 				out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Date Of Registration</h5></td>");
 
 				out.print("</tr>");
@@ -202,7 +214,8 @@ public class SearchLabour extends HttpServlet {
 							+ "</td><td>" + rs.getString(3) + "</td><td>" + rs.getString(4) + "</td><td>"
 							+ rs.getString(5) + "</td><td>" + rs.getString(6) + "</td><td>" + rs.getString(7)
 							+ "</td><td>" + rs.getString(8) + "</td><td>" + rs.getString(9) + "</td><td>"
-							+ rs.getString(12) + "</td><td>" + rs.getString(13) + "</td></tr>");
+							+ rs.getString(12) + "</td><td>" + rs.getString(13) + "</td><td>" + rs.getString(14)
+							+ "</td></tr>");
 
 				}
 
@@ -213,8 +226,11 @@ public class SearchLabour extends HttpServlet {
 				String label = request.getParameter("searchlabel");
 
 				Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-				PreparedStatement ps = conn.prepareStatement("select * from labour where fullname=?");
+				PreparedStatement ps = conn
+						.prepareStatement("select * from labour where fullname=? and jobstatus=? and employedin=? ");
 				ps.setString(1, label);
+				ps.setString(2, "Employed");
+				ps.setString(3, uname);
 
 				out.println("<body style='background-color:transparent;'>");
 				out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
@@ -256,8 +272,11 @@ public class SearchLabour extends HttpServlet {
 							+ "Job Status : " + "</td>");
 					out.print("<td>" + rs.getString(12) + "</td></tr>");
 					out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"
-							+ "Date Of Registration :" + "</td>");
+							+ "EmployedIn :" + "</td>");
 					out.print("<td>" + rs.getString(13) + "</td></tr>");
+					out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"
+							+ "Date Of Registration :" + "</td>");
+					out.print("<td>" + rs.getString(14) + "</td></tr>");
 				}
 
 				out.print("</table>");

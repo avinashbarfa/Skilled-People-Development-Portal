@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -68,6 +69,8 @@ public class AddLabour extends HttpServlet {
 
 			if (i > 0) {
 				out.println("Labour Is Successfully Registered !");
+				RequestDispatcher rd = request.getRequestDispatcher("successlaboursignup.jsp");
+				rd.forward(request, response);
 			}
 		} catch (Exception ex) {
 			System.out.print(ex);
