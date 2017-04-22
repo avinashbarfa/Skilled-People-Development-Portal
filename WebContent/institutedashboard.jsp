@@ -77,8 +77,8 @@
 					</div>
 					<div class="col-md-6">
 						<label for="gender">Gender :</label> <select name="gender">
-							<option value="male">Male</option>
-							<option value="female">Female</option>
+							<option value="Male">Male</option>
+							<option value="Female">Female</option>
 						</select>
 					</div>
 					<div class="col-md-6">
@@ -133,8 +133,8 @@
 					</div>
 
 					<div class="col-md-4">
-						<label for="city">City :</label> <input type="text" name="city"
-							id="txtAddress" placeholder="City.." required="required">
+						<label for="city">Address :</label> <input type="text" name="city"
+							id="txtAddress" placeholder="Address.." required="required">
 
 					</div>
 					<div class="col-md-2">
@@ -196,7 +196,7 @@
 				<h3 style="text-align: center; color: darkcyan;">View Labour
 					Details</h3>
 
-				<form action="SearchLabour" method="POST">
+				<form action="InstituteSearchLabour" method="POST">
 
 					<center>
 						<br>
@@ -282,7 +282,7 @@
 
 				<%
 					HttpSession check_session2 = request.getSession(false);
-					String uname = (String) session.getAttribute("tusername");
+					String uname = (String) check_session2.getAttribute("tusername");
 
 					if (uname != null) {
 				%>

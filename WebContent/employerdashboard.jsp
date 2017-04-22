@@ -33,7 +33,10 @@
 </style>
 
 <body>
-
+	<%
+		HttpSession check_session1 = request.getSession(false);
+		String uname = (String) check_session1.getAttribute("eusername");
+	%>
 	<div class="top-header">
 		<div class="container">
 			<a href="employerdashboard.jsp"><img src="img/logo.png"
@@ -63,14 +66,18 @@
 
 
 				<form action="CompanySearchLabour" method="POST">
-					<input type="text" name="city" placeholder="Enter City"
+					<input type="text" name="state" placeholder="Enter State"
+						required="required"><br> <input type="number"
+						name="number" placeholder="Enter Number of Labours you want"
 						required="required"><br> <input type="submit"
 						value="Search">
 				</form>
 			</div>
 
 			<div id="viewLabour" class="tabcontent" style="height: 320px;">
-
+				<%
+					request.setAttribute("uname", uname);
+				%>
 				<h3 style="text-align: center; color: darkcyan;">View Labour
 					Details</h3>
 				<form action="SearchLabour" method="POST">
@@ -157,9 +164,6 @@
 
 			<div id="profile" class="tabcontent" style="height: 468px;">
 				<%
-					HttpSession check_session1 = request.getSession(false);
-					String uname = (String) session.getAttribute("eusername");
-
 					if (uname != null) {
 				%>
 				<h3 style="text-align: center; color: darkcyan;">

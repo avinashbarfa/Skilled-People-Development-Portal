@@ -41,11 +41,11 @@
 			<h2>Work With Someone perfect for You</h2>
   			<div class="categories">
 	  			<div class="well"><img src="img/tailoring.jpg"><h4>Tailoring</h4></div>
-	  			<div class="well">Basic Well</div>
-	  			<div class="well">Basic Well</div>
-	  			<div class="well">Basic Well</div>
-	  			<div class="well">Basic Well</div>
-	  			<div class="well">Basic Well</div>
+	  			<div class="well"><img src="img/agriculture.jpg"><h4>Agriculture</h4></div>
+	  			<div class="well"><img src="img/nursing.jpg"><h4>Nursing</h4></div>
+	  			<div class="well"><img src="img/fabrication.jpg"><h4>Fabrication</h4></div>
+	  			<div class="well"><img src="img/electrician.jpg"><h4>Electrician</h4></div>
+	  			<div class="well"><img src="img/teacher.jpg"><h4>Teacher</h4></div>
 			</div>
 		</div>
 	</div> 
