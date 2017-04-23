@@ -86,16 +86,10 @@
 				</div>
 				<div class="col-md-4">
 					<label for="city">Address :</label> <input type="text" name="city"
-						id="txtAddress" placeholder="Address.." required="required">
+						id="txtAddress" placeholder="Address.." required="required" onchange="GetLocation()">
 
 				</div>
-				<div class="col-md-2">
-					<input type="button"
-						style="margin-top: 32px; margin-right: 72PX; height: 40px; width: 113px;"
-						onclick="GetLocation()" value="Get Location" />
-
-				</div>
-
+		
 				<script type="text/javascript">
 					function GetLocation() {
 						var geocoder = new google.maps.Geocoder();
@@ -138,8 +132,8 @@
 					style="margin-top: 16px; margin-right: 24px;" type="submit"
 					value="submit">
 			</form>
-			<div id="demo1" style="margin-left: 20px;" name="latitute"></div>
-			<div id="demo2" style="margin-left: 20px;" name="longitude"></div>
+			<div id="demo1" style="margin-left: 20px; display:none" name="latitute" ></div>
+			<div id="demo2" style="margin-left: 20px; display:none" name="longitude"></div>
 		</div>
 	</div>
 

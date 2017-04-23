@@ -134,15 +134,10 @@
 
 					<div class="col-md-4">
 						<label for="city">Address :</label> <input type="text" name="city"
-							id="txtAddress" placeholder="Address.." required="required">
+							id="txtAddress" placeholder="Address.." required="required" onchange="GetLocation()">
 
 					</div>
-					<div class="col-md-2">
-						<input type="button"
-							style="margin-top: 32px; margin-right: 72PX; height: 40px; width: 113px;"
-							onclick="GetLocation()" value="Get Location" />
-
-					</div>
+					
 					<script type="text/javascript">
 						function GetLocation() {
 							var geocoder = new google.maps.Geocoder();
@@ -176,11 +171,12 @@
 						};
 					</script>
 					<div class="col-md-6" style="margin-top: 35px;">
-						<div id="demo9" style="margin-left: 20px;" name="longitude"
+						<div id="demo9" style="margin-left: 20px;display:none" name="longitude"
 							value="longitude"></div>
-						<div id="demo10" style="margin-left: 20px;" name="longitude"
+						<div id="demo10" style="margin-left: 20px;display:none" name="longitude"
 							value="longitude"></div>
 					</div>
+					<center style="color:red">Note: 'Click on Get Location Button' before Submitting Form.</center>
 					<input type="hidden" name="latitude" id="latitude"> <input
 						type="hidden" name="longitude" id="longitude"> <input
 						type="submit" value="Submit"
@@ -195,89 +191,90 @@
 
 				<h3 style="text-align: center; color: darkcyan;">View Labour
 					Details</h3>
-
-				<form action="InstituteSearchLabour" method="POST">
-
-					<center>
-						<br>
-						<div class="col-md-4">
-							<label><h4>Search By :</h4></label> <select name="search-as"
-								id="search" style="width: 160px"
-								onchange="GetSelectedTextValue()">
-								<option value="">-- Filter by --</option>
-								<option value="username">USERNAME</option>
-								<option value="skill">SKILL</option>
-								<option value="state">STATE</option>
-							</select>
-						</div>
-
-						<div id="demo">
-							<div class="col-md-5">
-								<input type="text" name="searchlabel"
-									placeholder="Enter Details to Search..." style="width: 460px">
-							</div>
-						</div>
-
-						<div id="demo1">
-							<div class="col-md-5">
-								<select name="skill-wise" style="width: 460px">
-									<option value="">-- select skill --</option>
-									<option value="Tailor">Tailor</option>
-									<option value="Agriculture">Agriculture</option>
-									<option value="Nursing">Nursing</option>
-									<option value="Fabrication">Fabrication</option>
-									<option value="Electrician">Electrician</option>
-									<option value="Teacher">Teacher</option>
+				<div class="search-section">
+					<form action="InstituteSearchLabour" method="POST">
+			
+						<center>
+							<br>
+							<div class="col-md-4">
+								<label><h4>Search By :</h4></label> 
+								<select name="search-as"
+									id="search" style="width: 160px"
+									onchange="GetSelectedTextValue()">
+									<option value="">-- Filter by --</option>
+									<option value="username">USERNAME</option>
+									<option value="skill">SKILL</option>
+									<option value="state">STATE</option>
 								</select>
 							</div>
-						</div>
-
-						<div id="demo2">
-							<div class="col-md-5">
-								<select name="state-wise" style="width: 460px">
-									<option value="">-- Select State --</option>
-									<option value="Andra Pradesh">Andra Pradesh</option>
-									<option value="Arunachal Pradesh">Arunachal Pradesh</option>
-									<option value="Assam">Assam</option>
-									<option value="Bihar">Bihar</option>
-									<option value="Chhattisgarh">Chhattisgarh</option>
-									<option value="Goa">Goa</option>
-									<option value="Gujarat">Gujarat</option>
-									<option value="Haryana">Haryana</option>
-									<option value="Himachal Pradesh">Himachal Pradesh</option>
-									<option value="Jammu and Kashmir">Jammu and Kashmir</option>
-									<option value="Jharkhand">Jharkhand</option>
-									<option value="Karnataka">Karnataka</option>
-									<option value="Kerala">Kerala</option>
-									<option value="Madhya Pradesh">Madhya Pradesh</option>
-									<option value="Maharashtra">Maharashtra</option>
-									<option value="Manipur">Manipur</option>
-									<option value="Meghalaya">Meghalaya</option>
-									<option value="Mizoram">Mizoram</option>
-									<option value="Nagaland">Nagaland</option>
-									<option value="Odisha">Odisha</option>
-									<option value="Punjab">Punjab</option>
-									<option value="Rajasthan">Rajasthan</option>
-									<option value="Sikkim">Sikkim</option>
-									<option value="Tamil Nadu">Tamil Nadu</option>
-									<option value="Telangana">Telangana</option>
-									<option value="Tripura">Tripura</option>
-									<option value="Uttar Pradesh">Uttar Pradesh</option>
-									<option value="Uttarakhand">Uttarakhand</option>
-									<option value="West Bengal">West Bengal</option>
-								</select>
+	
+							<div id="demo">
+								<div class="col-md-5">
+									<input type="text" name="searchlabel"
+										placeholder="Enter Details to Search...">
+								</div>
 							</div>
-						</div>
-
-						<div class="col-md-3">
-							<input type="submit" name="submit" value="View Details"
-								style="height: 48px; width: 138px; border-radius: 0; float: right; margin-right: 18px">
-						</div>
-					</center>
-				</form>
-
+	
+							<div id="demo1">
+								<div class="col-md-5">
+									<select name="skill-wise">
+										<option value="">-- select skill --</option>
+										<option value="Tailor">Tailor</option>
+										<option value="Agriculture">Agriculture</option>
+										<option value="Nursing">Nursing</option>
+										<option value="Fabrication">Fabrication</option>
+										<option value="Electrician">Electrician</option>
+										<option value="Teacher">Teacher</option>
+									</select>
+								</div>
+							</div>
+	
+							<div id="demo2">
+								<div class="col-md-5">
+									<select name="state-wise">
+										<option value="">-- Select State --</option>
+										<option value="Andra Pradesh">Andra Pradesh</option>
+										<option value="Arunachal Pradesh">Arunachal Pradesh</option>
+										<option value="Assam">Assam</option>
+										<option value="Bihar">Bihar</option>
+										<option value="Chhattisgarh">Chhattisgarh</option>
+										<option value="Goa">Goa</option>
+										<option value="Gujarat">Gujarat</option>
+										<option value="Haryana">Haryana</option>
+										<option value="Himachal Pradesh">Himachal Pradesh</option>
+										<option value="Jammu and Kashmir">Jammu and Kashmir</option>
+										<option value="Jharkhand">Jharkhand</option>
+										<option value="Karnataka">Karnataka</option>
+										<option value="Kerala">Kerala</option>
+										<option value="Madhya Pradesh">Madhya Pradesh</option>
+										<option value="Maharashtra">Maharashtra</option>
+										<option value="Manipur">Manipur</option>
+										<option value="Meghalaya">Meghalaya</option>
+										<option value="Mizoram">Mizoram</option>
+										<option value="Nagaland">Nagaland</option>
+										<option value="Odisha">Odisha</option>
+										<option value="Punjab">Punjab</option>
+										<option value="Rajasthan">Rajasthan</option>
+										<option value="Sikkim">Sikkim</option>
+										<option value="Tamil Nadu">Tamil Nadu</option>
+										<option value="Telangana">Telangana</option>
+										<option value="Tripura">Tripura</option>
+										<option value="Uttar Pradesh">Uttar Pradesh</option>
+										<option value="Uttarakhand">Uttarakhand</option>
+										<option value="West Bengal">West Bengal</option>
+									</select>
+								</div>
+							</div>
+	
+							<div class="col-md-3">
+								<input type="submit" name="submit" value="View Details"
+									style="height: 48px; width: 138px; border-radius: 0; float: right; margin-right: 18px">
+							</div>
+						</center>
+					</form>
+				</div>
 			</div>
-
+		
 			<div id="profile" class="tabcontent" style="height: 468px;">
 
 				<%

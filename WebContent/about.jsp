@@ -30,8 +30,9 @@
 			
 		</div>
 	</div>
-	<img src="img/images.png" style="padding-left: 34%;"/>
-	
+	<div class="about-title">
+		<img src="img/images.png"/>
+	</div>
 	<div class="container" style="margin-top: 52px;margin-bottom: 100px;">
 		<div class="col-md-4">
 			<div class="card">
@@ -48,7 +49,7 @@
 	
 		<div class="col-md-4">
 			<div class="card">
-			  	<img src="img/images.jpg" style="width:100%;height: 212px;">
+			  	<img src="img/apurv.jpg" style="width:100%;height: 212px;">
 				    <h1>Apurv Singh</h1>
 				    <p class="title">Cyber Security Analyst</p>
 				    <p style="color: brown;">Don't believe in College</p>
@@ -62,7 +63,7 @@
 	
 		<div class="col-md-4">
 			<div class="card">
-			  	<img src="img/rushin.png" style="width:100%;height: 212px;">
+			  	<img src="img/DSC_0658.JPG" style="width:100%;height: 212px;">
 				    <h1>Rushin Tilva</h1>
 				    <p class="title">Only Focus on Andriod</p>
 				    <p style="color: brown;">Don't believe in my College</p>
