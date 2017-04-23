@@ -6,5 +6,5 @@
 	</body>
 </html>    
    
-    <%@ include file="index.jsp" %>
+    <%@ include file="login.jsp" %>
     
