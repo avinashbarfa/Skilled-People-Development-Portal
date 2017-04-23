@@ -36,3 +36,17 @@ a {
 button:hover, a:hover {
   opacity: 0.7;
 }
+
+.about-title img {
+	padding-left:38%;
+}
+
+@media screen and (max-width: 548px) {
+	.about-title img {
+		padding-left: 0px;
+		width: 205px;
+    	height: 55px;
+   		margin-left: 26%;
+		
+	}
+}

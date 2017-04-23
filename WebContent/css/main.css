@@ -238,7 +238,24 @@
     cursor: pointer;
     transition-duration: 0.4s;
 }
+.login-section table {
+	margin : 33px 348px;
+}
+@media screen and (max-width: 548px) {
+	.login-section table {
+	margin : 33px 0px;
+}
+}
 
+.login-section table select {
+	width: 326px;
+}
+
+@media screen and (max-width: 548px) {
+	.login-section table select {
+	 width: 156px;
+	}
+}
 .login-section .loginbutton:hover {
     box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19);
 }
@@ -449,3 +466,15 @@ input[type=submit]:hover {
     border: 1px solid #ccc;
     border-top: none;
 }
+
+.search-section select {
+	width : 460px;
+	
+}
+@media screen and (max-width: 548px) {
+	.search-section select {
+		width : 260px;
+		margin-top :4px;
+		margin-botton : 4px;
+	}
+}  
