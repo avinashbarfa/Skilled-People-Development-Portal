@@ -204,7 +204,7 @@
 					<%=rs.getString("zip")%></h4>
 				<h4
 					style="padding-left: 80px; padding-top: 16px; text-align: left; color: forestgreen;">
-					City :
+					Address :
 					<%=rs.getString("city")%></h4>
 
 				<%
