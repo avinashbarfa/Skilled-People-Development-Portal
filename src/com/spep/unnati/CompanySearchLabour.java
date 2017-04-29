@@ -38,42 +38,37 @@ public class CompanySearchLabour extends HttpServlet {
 			throws ServletException, IOException {
 
 		response.setContentType("text/html");
-		int count = 0;
 		PrintWriter out = response.getWriter();
-		double longitude = 0, latitude = 0;
-		String state = request.getParameter("state");
-		String number = request.getParameter("number");
-		ArrayList<String> al = new ArrayList<String>();
+		double clongitude = 0, clatitude = 0;
+		// String state = "";
+		// String name = request.getParameter("name");
+		// System.out.println(name);
+		// String number = request.getParameter("number");
+		// System.out.println(number);
+		ArrayList<String> al = new ArrayList<>();
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
-			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
-			PreparedStatement ps = conn.prepareStatement("SELECT state,latitude,longitude from company where state=?");
-			PreparedStatement ps1 = conn
-					.prepareStatement("SELECT fullname,state,latitude,longitude from labour where state=?");
-			ps.setString(1, state);
-			ps1.setString(1, state);
-			ResultSet rs = ps.executeQuery();
-			ResultSet rs1 = ps1.executeQuery();
-			int numberofPeople = Integer.parseInt(number);
-			out.println(rs.next());
-			if (rs.next()) {
-				longitude = Double.parseDouble(rs.getString("longitude"));
-				latitude = Double.parseDouble(rs.getString("latitude"));
-			}
-			while (rs1.next()) {
-				count++; // Contains the total no. of labours in that state
-			}
-			rs1 = ps1.executeQuery();
-			while (rs1.next()) {
-				double llongitude = Double.parseDouble(rs1.getString("longitude"));
-				double llatitude = Double.parseDouble(rs1.getString("latitude"));
-				al = locator(numberofPeople, count, longitude, latitude, llatitude, llongitude,
-						rs1.getString("fullname"));
-			}
-
+			// Class.forName("com.mysql.jdbc.Driver");
+			// Connection conn =
+			// DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati",
+			// "root", "root");
+			// PreparedStatement ps = conn
+			// .prepareStatement("SELECT compname,latitude,longitude,state from
+			// company where compname=?");
+			// ps.setString(1, name);
+			// ResultSet rs = ps.executeQuery();
+			// int numberofPeople = 0;
+			/*
+			 * if (rs.next()) { clongitude =
+			 * Double.parseDouble(rs.getString("longitude")); clatitude =
+			 * Double.parseDouble(rs.getString("latitude")); state =
+			 * rs.getString(6); }
+			 */
+			al = locator();
 			Iterator<String> it = al.iterator();
 			while (it.hasNext()) {
-				out.println(it.next());
+				out.println("<center>");
+				out.println("<br><br>");
+				out.println(it.next() + "<br><br>");
 			}
 
 		} catch (Exception e) {
@@ -82,35 +77,68 @@ public class CompanySearchLabour extends HttpServlet {
 
 	}
 
-	ArrayList<String> locator(int numberOfPeople, int count, double longitude, double latitude, double llatitude,
-			double llongitude, String name) {
+	ArrayList<String> locator() {
 
-		ArrayList<String> al = new ArrayList<String>();
-		int get = 0;
-		double latitudeDist = latitude * 111194.9266;
-		double longitudeDist = longitude * 111194.9266;
+		ArrayList<String> al = new ArrayList<>();
+		// clongitude = 78;
+		// clatitude = 18;
+		// numberOfPeople = 20;
+		// int get = 0;
+		// double latitudeDist = clatitude * 111194.9266;
+		// double longitudeDist = clongitude * 111194.9266;
 		int dist = 500;
-		Boolean flag = false;
+		// Boolean flag = false;
 
-		while (al.size() < numberOfPeople) {
-			while (count != 0) {
-				if (llatitude <= latitudeDist + dist && llatitude >= latitudeDist - dist) {
-					if (llongitude <= latitudeDist + dist && llongitude >= latitudeDist - dist) {
-						al.add(name);
-						if (al.size() >= numberOfPeople) {
-							flag = true;
-							break;
-						}
-					}
-				}
-				if (flag) {
-					break;
-				}
-
-				dist += 500;
-				count--;
+		// while (al.size() < numberOfPeople) {
+		// double minLatitudeDist = latitudeDist - dist;
+		// String minLatitude = String.valueOf(minLatitudeDist / 111194.9266);
+		// double minLongitudeDist = longitudeDist - dist;
+		// String minLongitude = String.valueOf(minLongitudeDist / 111194.9266);
+		// double maxLatitudeDist = latitudeDist + dist;
+		// String maxLatitude = String.valueOf(maxLatitudeDist / 111194.9266);
+		// double maxLongitudeDist = longitudeDist + dist;
+		// String maxLongitude = String.valueOf(maxLongitudeDist / 111194.9266);
+		try {
+			Class.forName("com.mysql.jdbc.Driver");
+			Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/unnati", "root", "root");
+			// PreparedStatement ps1 = conn.prepareStatement("SELECT
+			// id,jobstatus,latitude,longitude from labour WHERE "
+			// + "latitude >= ? and latitude <= ? and longitude >= ? and
+			// longitude <= ?");
+			PreparedStatement ps1 = conn.prepareStatement(
+					"SELECT id,fullname,contact,latitude,longitude from labour WHERE longitude <= 80 and longitude >= 76 and latitude <= 9 and latitude >= 8.4");
+			// ps1.setString(1, "Not Employed");
+			// ps1.setString(2, minLatitude);
+			// ps1.setString(3, maxLatitude);
+			// ps1.setString(4, minLongitude);
+			// ps1.setString(5, maxLongitude);
+			ResultSet rs1 = ps1.executeQuery();
+			while (rs1.next()) {
+				String name = rs1.getString(2);
+				String contact = rs1.getString(3);
+				String concat = name + " " + contact;
+				al.add(concat);
+				/*
+				 * double latitude = 0; double longitude = 0; int id = 0;
+				 * latitude = Double.parseDouble(rs1.getString(10)); longitude =
+				 * Double.parseDouble(rs1.getString(11)); id =
+				 * Integer.parseInt(rs1.getString(1));
+				 * 
+				 * if (latitude <= latitudeDist + dist && latitude >=
+				 * latitudeDist - dist) { if (longitude <= latitudeDist + dist
+				 * && longitude >= latitudeDist - dist) { al.add(id); if
+				 * (al.size() >= numberOfPeople) { flag = true; break; } } } if
+				 * (flag) { break; }
+				 * 
+				 * dist += 500;
+				 */
 			}
+
+			dist += 500;
+		} catch (Exception e) {
+			e.printStackTrace();
 		}
+		// }
 		return al;
 	}
 }

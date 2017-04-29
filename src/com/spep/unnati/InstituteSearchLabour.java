@@ -57,8 +57,10 @@ public class InstituteSearchLabour extends HttpServlet {
 					label2 = "Nursing";
 				} else if (innerskill.equalsIgnoreCase("Fabrication")) {
 					label2 = "Fabrication";
-				} else if (innerskill.equalsIgnoreCase("Electrican")) {
-					label2 = "Electrican";
+				} else if (innerskill.equalsIgnoreCase("Electrician")) {
+					label2 = "Electrician";
+				} else if (innerskill.equalsIgnoreCase("Teacher")) {
+					label2 = "Teacher";
 				} else {
 					out.println("<h2>Error Ocurrened While Searching. Contact The Team</p>");
 				}
