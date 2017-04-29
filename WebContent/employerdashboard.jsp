@@ -66,11 +66,7 @@
 
 
 				<form action="CompanySearchLabour" method="POST">
-					<input type="text" name="state" placeholder="Enter State"
-						required="required"><br> <input type="number"
-						name="number" placeholder="Enter Number of Labours you want"
-						required="required"><br> <input type="submit"
-						value="Search">
+				 <input type="submit" value="Search">
 				</form>
 			</div>
 
@@ -227,14 +223,13 @@
 			<div class="social-link">
 
 				<h3 class="fa fa-text">Follow Us :</h3>
-				<a href="#" class="fa fa-facebook"></a> <a href="#"
-					class="fa fa-twitter"></a> <a href="#" class="fa fa-google"></a> <a
-					href="#" class="fa fa-linkedin"></a>
+				<a href="https://www.facebook.com/SkillIndiaOfficial/" class="fa fa-facebook"></a>
+					<a href="https://twitter.com/MSDESkillIndia" class="fa fa-twitter"></a>
 			</div>
 			<hr>
 
 			<div class="rights">
-				<h6>Some Contents are copied &copy; 2017</h6>
+				<h6>All Rights are Reserved &copy; 2017</h6>
 			</div>
 		</div>
 	</div>

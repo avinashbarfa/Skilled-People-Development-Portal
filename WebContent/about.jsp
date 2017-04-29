@@ -35,44 +35,19 @@
 	</div>
 	<div class="container" style="margin-top: 52px;margin-bottom: 100px;">
 		<div class="col-md-4">
-			<div class="card">
-			  	<img src="img/avi.jpg"  style="width:100%;height: 212px;">
-				    <h1>Avinash Barfa</h1>
-				    <p class="title">CEO & Founder</p>
-				    <p style="color: brown;">Symbiosis Institute of Technology,Pune</p>
-				    <div style="margin: 24px 0;"> 
-				      <a href="https://in.linkedin.com/in/avinash-barfa-a53581116" target="blank"><i class="fa fa-linkedin"></i></a>  
-				      <a href="https://www.facebook.com/avibarfa98" target="blank"><i class="fa fa-facebook"></i></a></div>
-			   		<p><button>Contact</button></p>
-			</div>
+	<br><br>
+<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="avinashbarfa"><a class="LI-simple-link" href='https://in.linkedin.com/in/avinashbarfa?trk=profile-badge'>AVINASH BARFA</a></div>
 		</div>
 	
-		<div class="col-md-4">
-			<div class="card">
-			  	<img src="img/apurv.jpg" style="width:100%;height: 212px;">
-				    <h1>Apurv Singh</h1>
-				    <p class="title">Cyber Security Analyst</p>
-				    <p style="color: brown;">Don't believe in College</p>
-				    <div style="margin: 24px 0;"> 
-				      <a href="https://in.linkedin.com/in/apurvsinghgautam" target="blank"><i class="fa fa-linkedin"></i></a>  
-				      <a href="https://www.facebook.com/apurvkfa" target="blank"><i class="fa fa-facebook"></i></a> 
-				  	</div>
-			   		<p><button>Contact</button></p>
-			</div>
-		</div>	
 	
 		<div class="col-md-4">
-			<div class="card">
-			  	<img src="img/DSC_0658.JPG" style="width:100%;height: 212px;">
-				    <h1>Rushin Tilva</h1>
-				    <p class="title">Only Focus on Andriod</p>
-				    <p style="color: brown;">Don't believe in my College</p>
-				    <div style="margin: 24px 0;"> 
-				      <a href="#"><i class="fa fa-linkedin"></i></a>  
-				      <a href="#"><i class="fa fa-facebook"></i></a> 
-				  	</div>
-			   		<p><button>Contact</button></p>
-			</div>
+		<br><br>
+		<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="apurvsinghgautam"><a class="LI-simple-link" href='https://in.linkedin.com/in/apurvsinghgautam?trk=profile-badge'>Apurv Singh Gautam</a></div>
+		</div>
+		
+		<div class="col-md-4">
+		<br><br>
+		<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="rushin-tilva-a5ab9b114"><a class="LI-simple-link" href='https://in.linkedin.com/in/rushin-tilva-a5ab9b114?trk=profile-badge'>Rushin Tilva</a></div>
 		 </div>
 
 	</div>
@@ -84,19 +59,17 @@
 				<div class="social-link">
 
 					<h3 class="fa fa-text">Follow Us :</h3>
-					<a href="#" class="fa fa-facebook"></a>
-					<a href="#" class="fa fa-twitter"></a>
-					<a href="#" class="fa fa-google"></a>
-					<a href="#" class="fa fa-linkedin"></a>
+					<a href="https://www.facebook.com/SkillIndiaOfficial/" class="fa fa-facebook"></a>
+					<a href="https://twitter.com/MSDESkillIndia" class="fa fa-twitter"></a>
 				</div>
 			<hr>
 
 			<div class="rights">
-				<h6>Some Contents are copied &copy; 2017</h6>
+				<h6>All Rights are Reserved &copy; 2017</h6>
 			</div>
 		</div>
 	</div>	
-</body>
 	 
 </body>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 </html>

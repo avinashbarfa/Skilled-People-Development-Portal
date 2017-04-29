@@ -191,7 +191,7 @@
     padding-bottom: 60px;
     text-align: center;
 }
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 648px) {
   .login-section {
     padding-top: 0px;
   }
@@ -215,7 +215,7 @@
     margin: 12px 12px;
     display: inline;
 }
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 648px) {
   .login-section form input {
     width: 224px;
     margin: 12px 0px;
@@ -241,7 +241,7 @@
 .login-section table {
 	margin : 33px 348px;
 }
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 648px) {
 	.login-section table {
 	margin : 33px 0px;
 }
@@ -251,7 +251,7 @@
 	width: 326px;
 }
 
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 648px) {
 	.login-section table select {
 	 width: 156px;
 	}
@@ -273,7 +273,7 @@
     background-color: #f9f9f9;
     height: 500px;
 }
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 648px) {
   .signup-section {
     padding-top: 54px;
     height: 600px;
@@ -471,7 +471,7 @@ input[type=submit]:hover {
 	width : 460px;
 	
 }
-@media screen and (max-width: 548px) {
+@media screen and (max-width: 648px) {
 	.search-section select {
 		width : 260px;
 		margin-top :4px;
