@@ -33,35 +33,35 @@
 	<div class="about-title">
 		<img src="img/images.png"/>
 	</div>
+	
 	<div class="container" style="margin-top: 52px;margin-bottom: 100px;">
-		<div class="col-md-4">
-	<br><br>
-<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="avinashbarfa"><a class="LI-simple-link" href='https://in.linkedin.com/in/avinashbarfa?trk=profile-badge'>AVINASH BARFA</a></div>
-		</div>
-	
-	
-		<div class="col-md-4">
-		<br><br>
-		<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="apurvsinghgautam"><a class="LI-simple-link" href='https://in.linkedin.com/in/apurvsinghgautam?trk=profile-badge'>Apurv Singh Gautam</a></div>
-		</div>
+		<center>
+			<div class="col-md-4">
+				<br><br>
+				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="avinashbarfa"><a class="LI-simple-link" href='https://in.linkedin.com/in/avinashbarfa?trk=profile-badge'>AVINASH BARFA</a></div>
+			</div>
 		
-		<div class="col-md-4">
-		<br><br>
-		<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="rushin-tilva-a5ab9b114"><a class="LI-simple-link" href='https://in.linkedin.com/in/rushin-tilva-a5ab9b114?trk=profile-badge'>Rushin Tilva</a></div>
-		 </div>
-
+		
+			<div class="col-md-4">
+				<br><br>
+				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="apurvsinghgautam"><a class="LI-simple-link" href='https://in.linkedin.com/in/apurvsinghgautam?trk=profile-badge'>Apurv Singh Gautam</a></div>
+			</div>
+			
+			<div class="col-md-4">
+				<br><br>
+				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="rushin-tilva-a5ab9b114"><a class="LI-simple-link" href='https://in.linkedin.com/in/rushin-tilva-a5ab9b114?trk=profile-badge'>Rushin Tilva</a></div>
+			 </div>
+		</center>
 	</div>
 	
 	<div class="footer">
 		<div class="container">
 			<hr>
-				
-				<div class="social-link">
-
-					<h3 class="fa fa-text">Follow Us :</h3>
-					<a href="https://www.facebook.com/SkillIndiaOfficial/" class="fa fa-facebook"></a>
-					<a href="https://twitter.com/MSDESkillIndia" class="fa fa-twitter"></a>
-				</div>
+			<div class="social-link">
+				<h3 class="fa fa-text">Follow Us :</h3>
+				<a href="https://www.facebook.com/SkillIndiaOfficial/" class="fa fa-facebook"></a>
+				<a href="https://twitter.com/MSDESkillIndia" class="fa fa-twitter"></a>
+			</div>
 			<hr>
 
 			<div class="rights">
