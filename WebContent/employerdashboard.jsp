@@ -66,6 +66,8 @@
 
 
 				<form action="CompanySearchLabour" method="POST">
+				<input type="text" name="name" placeholder="Enter Company Name..">
+				<input type="number" name="number" placeholder="Enter number of people..">	
 				 <input type="submit" value="Search">
 				</form>
 			</div>
