@@ -48,7 +48,9 @@
 
 	<div class="institute-nav">
 		<div class="container">
+			
 			<hr>
+			
 			<div class="tab">
 				<button class="tablinks" onclick="openCategory(event, 'profile')"
 					id="defaultOpen">PROFILE</button>
@@ -58,7 +60,7 @@
 					LABOUR</button>
 			</div>
 
-			<div id="addlabour" class="tabcontent" style="height: 720px;">
+			<div id="addlabour" class="tabcontent" style="height: 864px;">
 				<h3 style="text-align: center; color: darkcyan;">Add Labour</h3>
 				<form action="AddLabour" method="POST">
 					<div class="col-md-12">
@@ -170,17 +172,13 @@
 											});
 						};
 					</script>
-					<div class="col-md-6" style="margin-top: 35px;">
-						<div id="demo9" style="margin-left: 20px;display:none" name="longitude"
-							value="longitude"></div>
-						<div id="demo10" style="margin-left: 20px;display:none" name="longitude"
-							value="longitude"></div>
-					</div>
-					<center style="color:red">Note: 'Click on Get Location Button' before Submitting Form.</center>
-					<input type="hidden" name="latitude" id="latitude"> <input
-						type="hidden" name="longitude" id="longitude"> <input
-						type="submit" value="Submit"
-						style="height: 48px; width: 138px; border-radius: 0; float: right; margin-top: 50px; margin-right: 21px;">
+				
+					<input type="hidden" name="latitude" id="latitude"> 
+					<input type="hidden" name="longitude" id="longitude">
+					
+					
+					
+					<input type="submit" value="Submit"	style="height: 48px; width: 138px; border-radius: 0; float: right; margin-top: 50px; margin-right: 21px;">
 
 				</form>
 
