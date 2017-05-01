@@ -60,13 +60,25 @@ public class CompanySearchLabour extends HttpServlet {
 
 			al = locator(clongitude, clatitude, numberOfPeople, skill);
 			// int count = 1;
+			out.println("<body style='background-color:transparent;'>");
+			out.print("<h1 style='text-align: center;color: darkcyan;padding-top:12px;'>* Labour Details *</h1>");
+			out.print(
+					"<table style='margin-left: 380px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:1150px;border-spacing: 0;border: 1px solid #ddd;'");
+			out.print("<tr>");
+			out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Full Name</h5></td>");
+			out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Skill</h5></td>");
+			out.print("<td style='border: none;text-align: left;padding: 8px;'><h5>Contact Number</h5></td>");
+			out.print("</tr>");
 			Iterator<String> it = al.iterator();
 			while (it.hasNext()) {
 				String[] splited = it.next().split("\\s+");
-				out.println("<center>");
-				out.println("<br>");
-				out.println(splited[0] + " " + splited[1] + "<br>" + splited[2]);
+				out.print("<tr><td style='border: none;text-align: left;padding: 8px;'>" + splited[0] + " " + splited[1]
+						+ "</td><td>" + splited[2] + " </td><td>" + splited[3] + "</td></tr>");
 			}
+			out.print("</tr>");
+			out.print("</table>");
+			out.print(
+					"<h4 style='text-align: center;margin-top: 24px;'><a style='text-decoration: none;' href='employerdashboard.jsp'>Go Back to the Dashbaord</a>");
 
 		} catch (Exception e) {
 			System.out.println(e);
@@ -86,9 +98,9 @@ public class CompanySearchLabour extends HttpServlet {
 		String maxLatitude = String.valueOf(maxLatitudeDist / 111194.9266);
 		double maxLongitudeDist = longitudeDist + dist;
 		String maxLongitude = String.valueOf(maxLongitudeDist / 111194.9266);
-		String query = "SELECT id,fullname,contact,latitude,longitude from labour WHERE longitude <= " + maxLongitude
-				+ " and longitude >= " + minLongitude + " and latitude <= " + maxLatitude + " and latitude >= "
-				+ minLatitude + " and jobstatus = ? and skill = ?";
+		String query = "SELECT id,fullname,skill,contact,latitude,longitude from labour WHERE longitude <= "
+				+ maxLongitude + " and longitude >= " + minLongitude + " and latitude <= " + maxLatitude
+				+ " and latitude >= " + minLatitude + " and jobstatus = ? and skill = ?";
 		return query;
 	}
 
@@ -133,8 +145,9 @@ public class CompanySearchLabour extends HttpServlet {
 			while (rs2.next()) {
 
 				String name = rs2.getString(2);
-				String contact = rs2.getString(3);
-				String concat = name + " " + contact;
+				String contact = rs2.getString(4);
+				String skilled = rs2.getString(3);
+				String concat = name + " " + skilled + " " + contact;
 				al.add(concat);
 				count2++;
 

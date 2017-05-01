@@ -80,7 +80,7 @@ public class SearchLabour extends HttpServlet {
 				// ResultSetMetaData rsmd = rs.getMetaData();
 
 				out.print(
-						"<table style='margin-left: 100px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:1150px;border-spacing: 0;border: 1px solid #ddd;'");
+						"<table style='margin-left: 380px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:1150px;border-spacing: 0;border: 1px solid #ddd;'");
 				// int total = rsmd.getColumnCount();
 				out.print("<tr>");
 
@@ -191,7 +191,7 @@ public class SearchLabour extends HttpServlet {
 				// ResultSetMetaData rsmd = rs.getMetaData();
 
 				out.print(
-						"<table style='margin-left: 100px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:1150px;border-spacing: 0;border: 1px solid #ddd;'");
+						"<table style='margin-left: 380px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:1150px;border-spacing: 0;border: 1px solid #ddd;'");
 				// int total = rsmd.getColumnCount();
 				out.print("<tr>");
 
@@ -239,7 +239,7 @@ public class SearchLabour extends HttpServlet {
 
 				ResultSet rs = ps.executeQuery();
 				out.print(
-						"<table style='margin-left: 300px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:800px;'>");
+						"<table style='margin-left: 500px;margin-top: 58px;background-color: rgba(0, 150, 136, 0.66);padding: 18px;width:800px;'>");
 
 				while (rs.next()) {
 					out.print("<tr>");
@@ -279,6 +279,8 @@ public class SearchLabour extends HttpServlet {
 					out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"
 							+ "Date Of Registration :" + "</td>");
 					out.print("<td>" + rs.getString(14) + "</td></tr>");
+					out.print("<tr><td style='padding: 6px 0px;font-size: 16px;color: cornsilk;font-family: serif;'>"
+							+ "<br><hr></hr>" + "</td>");
 				}
 
 				out.print("</table>");
