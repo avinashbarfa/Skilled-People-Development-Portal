@@ -15,29 +15,34 @@
 
 </style>
 
-<body>
 
-	<div class="nav"> 
-		<div class="container">
+<body>
+	
+	<div class="mobile-nav">
+	 	<%@ include file="navigation.jsp" %>
+    </div>
+	
+    <div class="desktop-nav"> 
+		<div class="container">	
 			<a href="index.jsp"><img src="img/logo.png" style="float: left;"></a>
-			
-				<div class="nav-medium" id="myNavmedium">
-  					<a href="#how IT WORKS">HOW IT WORKS</a>
-					<a href="about.jsp">ABOUT US</a>
-					<a href="signup.html"><span class="glyphicon glyphicon-log-in">&nbsp;</span>SIGN UP</a>
-					<a href="login.jsp"><span class="glyphicon glyphicon-log-in">&nbsp;</span>LOGIN</a>
-					<a href="javascript:void(0);" class="icon" onclick="myNavigation()">&#9776;</a>
-				</div>
-			
+					
+			<div class="nav-medium" id="myNavmedium">
+ 					<a href="#how IT WORKS">HOW IT WORKS</a>
+				<a href="about.jsp">ABOUT US</a>
+				<a href="signup.html"><span class="glyphicon glyphicon-user">&nbsp;</span>SIGN UP</a>
+				<a href="login.jsp"><span class="glyphicon glyphicon-log-in">&nbsp;</span>LOGIN</a>
+				<a href="javascript:void(0);" class="icon" onclick="myNavigation()">&#9776;</a>
+			</div>
 		</div>
 	</div>
+
 
 	<div class="slider">
 			<img src="img/banner4.png">
 	</div>
-
+	
 	<div class="section">
-		<div class="container">
+		<div class="container">		
 			<h2>Work With Someone perfect for You</h2>
   			<div class="categories">
 	  			<div class="well"><img src="img/tailoring.jpg"><h4>Tailoring</h4></div>
@@ -47,7 +52,6 @@
 	  			<div class="well"><img src="img/electrician.jpg"><h4>Electrician</h4></div>
 	  			<div class="well"><img src="img/teacher.jpg"><h4>Teacher</h4></div>
 			</div>
-		</div>
 	</div> 
 
 	<div class="footer">
@@ -68,5 +72,4 @@
 		</div>
 	</div>	
 </body>
-	<script src="js/main.js"></script>
 </html>
