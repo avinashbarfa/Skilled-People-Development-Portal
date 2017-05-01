@@ -35,6 +35,22 @@
 }
 
 /* Add a black background color to the top navigation */
+
+
+.mobile-nav {
+	display : none;
+}
+
+	
+@media screen and (max-width: 648px) {
+	.mobile-nav {
+		display : block;
+	}
+	
+	.desktop-nav {
+		display : none;
+	}
+} 
 .nav-medium {
     background-color: transparent;
     overflow: hidden;
@@ -71,6 +87,11 @@
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
+}
+@media screen and (max-width: 648px) {
+	.slider img{ 
+		margin-top: -20px;
+	}
 }
 
 .section h2{
