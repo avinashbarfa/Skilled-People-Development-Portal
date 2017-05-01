@@ -41,9 +41,10 @@ public class CompanySearchLabour extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		double clongitude = 0;
         double clatitude = 0;
-		String nameOfCompany = request.getParameter("name");
+		String nameOfCompany = request.getParameter("cname");
+		String skill = request.getParameter("skill-wise");
 		// System.out.println(name);
-		int numberOfPeople = Integer.parseInt(request.getParameter("number"));
+		int numberOfPeople = Integer.parseInt(request.getParameter("nop"));
 		// System.out.println(number);
 		ArrayList<String> al = new ArrayList<>();
 		try {
@@ -52,18 +53,22 @@ public class CompanySearchLabour extends HttpServlet {
 			PreparedStatement ps = conn.prepareStatement("SELECT compname,latitude,longitude from company where compname=?");
 			ps.setString(1, nameOfCompany);
 			ResultSet rs = ps.executeQuery();
-			
+			out.println(numberOfPeople);
+			out.println(skill);
+			out.println(nameOfCompany);
 			if (rs.next()) { 
-				clongitude = Double.parseDouble(rs.getString("longitude")); 
-				clatitude = Double.parseDouble(rs.getString("latitude")); 
+				clongitude = Double.parseDouble(rs.getString("longitude")); //77.5946;
+				clatitude = Double.parseDouble(rs.getString("latitude")); //12.9716;
 			}
 			
-			al = locator(clongitude,clatitude,numberOfPeople);
+			al = locator(clongitude,clatitude,numberOfPeople,skill);
+			int count = 1;
 			Iterator<String> it = al.iterator();
 			while (it.hasNext()) {
+				String[] splited = it.next().split("\\s+");
 				out.println("<center>");
-				out.println("<br><br>");
-				out.println(it.next() + "<br><br>");
+				out.println("<br>");
+				out.println(splited[0] + " " + splited[1] + "<br>" + splited[2]);
 			}
 
 		} catch (Exception e) {
@@ -72,7 +77,7 @@ public class CompanySearchLabour extends HttpServlet {
 
 	}
 	
-	String query(double clongitude,double clatitude,int dist){
+	String query(double clongitude,double clatitude,int dist,String skill){
 		
 		double latitudeDist = clatitude * 111194.9266;
 		double longitudeDist = clongitude * 111194.9266;
@@ -85,15 +90,15 @@ public class CompanySearchLabour extends HttpServlet {
 	    String maxLatitude = String.valueOf(maxLatitudeDist / 111194.9266);
 	    double maxLongitudeDist = longitudeDist + dist;
 	    String maxLongitude = String.valueOf(maxLongitudeDist / 111194.9266);
-	    String query = "SELECT id,fullname,contact,latitude,longitude from labour WHERE longitude <= " + maxLongitude + " and longitude >= " + minLongitude + " and latitude <= " + maxLatitude + " and latitude >= " + minLatitude;
+	    String query = "SELECT id,fullname,contact,latitude,longitude from labour WHERE longitude <= " + maxLongitude + " and longitude >= " + minLongitude + " and latitude <= " + maxLatitude + " and latitude >= " + minLatitude + " and jobstatus = Not Employed and skill = " + skill;
 	    return query;
 	}
 	
-	ArrayList<String> locator(double clongitude,double clatitude,int numberOfPeople) {
+	ArrayList<String> locator(double clongitude,double clatitude,int numberOfPeople,String skill) {
 
 		ArrayList<String> al = new ArrayList<>();
 		
-		int dist = 100000;
+		int dist = 70;// Hundred Kilometers radius.
 		
 		try {
 			Class.forName("com.mysql.jdbc.Driver");
@@ -105,7 +110,7 @@ public class CompanySearchLabour extends HttpServlet {
 				
 			    count = 0;
 				
-				PreparedStatement ps1 = conn.prepareStatement(query(clongitude,clatitude,dist));
+				PreparedStatement ps1 = conn.prepareStatement(query(clongitude,clatitude,dist,skill));
 				ResultSet rs1 = ps1.executeQuery();
 				
 			    while(rs1.next()){
@@ -113,13 +118,13 @@ public class CompanySearchLabour extends HttpServlet {
 			    }
 			    
 			    if(count <= numberOfPeople){
-			    	dist += 100000;
+			    	dist += 70;
 			    }
 			    
 			}
 			
 
-			PreparedStatement ps2 = conn.prepareStatement(query(clongitude,clatitude,dist));
+			PreparedStatement ps2 = conn.prepareStatement(query(clongitude,clatitude,dist,skill));
 			ResultSet rs2 = ps2.executeQuery();
 			
 			int count2 = 0;
