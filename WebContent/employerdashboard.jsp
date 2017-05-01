@@ -72,7 +72,7 @@
 				</div>
 						
 				<form action="CompanySearchLabour" method="POST">
-				
+					<input type="text" name="cname" value="<%=uname %>" readonly>				
 					<div class="col-md-6">
 						<select name="skill-wise" style="margin-top: 8px;">
 							<option value="">-- select skill --</option>
@@ -85,7 +85,7 @@
 						</select>
 					</div>
 					<div class="col-md-3">
-						<input type="text" name="number" placeholder="Enter number of people..">	
+						<input type="text" name="nop" placeholder="Enter number of people..">	
 					</div>
 					<div class="col-md-12">
 						<input type="submit" value="Search">
