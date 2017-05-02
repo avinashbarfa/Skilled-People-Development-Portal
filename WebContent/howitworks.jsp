@@ -44,15 +44,15 @@
 	<div class="col-md-12">
 	<h4 style="color: indigo;font-size: 26px;font-family: serif;">Training Center :</h4>
 	<pre>
-		Step 1: Training Center has to register on own our portal. 
-		
-		Step 2: After that they can login to our portal with the ITI name as Username and Password.
-		
-		Step 3: Training Center will register people on the portal, whom they have given training.
-		
-		Step 4: After Successfully Registration of Labour we have the details of person.
-		
-		
+	Step 1: Training Center has to register on own our portal. 
+	
+	Step 2: After that they can login to our portal with the ITI name as Username and Password.
+	
+	Step 3: Training Center will register people on the portal, whom they have given training.
+	
+	Step 4: After Successfully Registration of Labour we have the details of person.
+	
+	
 		  
 	</pre>
 	</div>
