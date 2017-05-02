@@ -86,8 +86,8 @@
 						</select>
 					</div>
 					<div class="col-md-3">
-						<input type="text" name="nop"
-							placeholder="Enter number of people..">
+						<input type="text" name="nop" id="nop"
+							placeholder="Enter number of people.." onchange="rangeFunction()">
 					</div>
 					<div class="col-md-12">
 						<input type="submit" value="Search">
@@ -267,6 +267,14 @@
 
 <script src="js/main.js"></script>
 <script>
+	function rangeFunction() {
+		var val = document.getElementById('nop').value.length;
+		if (val > 100) {
+			alert("Number of Employee should be less than 100");
+		} else if (val <= 0) {
+			alert("Number of Employee should be greater than 0");
+		}
+	}
 	function GetSelectedTextValue() {
 		var selectedText = document.getElementById('search').value;
 		var selectedValue = selectedText;
