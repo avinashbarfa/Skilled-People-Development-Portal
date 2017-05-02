@@ -36,29 +36,46 @@
 			
 		</div>
 	</div>
-	<div class="about-title">
-		<img src="img/images.png"/>
+		
+	<div class="container">
+		
+		<h2><center>HOW IT WORKS</center></h2>
+
+	<div class="col-md-12">
+	<h4 style="color: indigo;font-size: 26px;font-family: serif;">Training Center :</h4>
+	<pre>
+		Step 1: Training Center has to register on own our portal. 
+		
+		Step 2: After that they can login to our portal with the ITI name as Username and Password.
+		
+		Step 3: Training Center will register people on the portal, whom they have given training.
+		
+		Step 4: After Successfully Registration of Labour we have the details of person.
+		
+		
+		  
+	</pre>
+	</div>
+		
+	
+	<div class="col-md-12">
+	<h4 style="color: indigo;font-size: 26px;font-family: serif;">Company :</h4>
+	<pre>
+	Step 1: Company has to register on own our portal. 
+	
+	Step 2: After that they can login to our portal with the Company name as Username and Password.
+	
+	Step 3: Company can now search skilled labours nearest to them.
+	
+	Step 4: They will get the details of the labour.
+	
+   	Step 5: They can manually contact to labour via contact number and get their work done.
+			
+			
+	</pre>
+	</div>
 	</div>
 	
-	<div class="container" style="margin-top: 52px;margin-bottom: 100px;">
-		<center>
-			<div class="col-md-4">
-				<br><br>
-				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="avinashbarfa"><a class="LI-simple-link" href='https://in.linkedin.com/in/avinashbarfa?trk=profile-badge'>AVINASH BARFA</a></div>
-			</div>
-		
-		
-			<div class="col-md-4">
-				<br><br>
-				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="apurvsinghgautam"><a class="LI-simple-link" href='https://in.linkedin.com/in/apurvsinghgautam?trk=profile-badge'>Apurv Singh Gautam</a></div>
-			</div>
-			
-			<div class="col-md-4">
-				<br><br>
-				<div class="LI-profile-badge"  data-version="v1" data-size="large" data-locale="en_US" data-type="vertical" data-theme="dark" data-vanity="rushin-tilva-a5ab9b114"><a class="LI-simple-link" href='https://in.linkedin.com/in/rushin-tilva-a5ab9b114?trk=profile-badge'>Rushin Tilva</a></div>
-			 </div>
-		</center>
-	</div>
 	
 	<div class="footer">
 		<div class="container">

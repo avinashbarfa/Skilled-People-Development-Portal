@@ -27,7 +27,7 @@
 			<a href="index.jsp"><img src="img/logo.png" style="float: left;"></a>
 					
 			<div class="nav-medium" id="myNavmedium">
- 					<a href="#how IT WORKS">HOW IT WORKS</a>
+ 					<a href="howitworks.jsp">HOW IT WORKS</a>
 				<a href="about.jsp">ABOUT US</a>
 				<a href="signup.html"><span class="glyphicon glyphicon-user">&nbsp;</span>SIGN UP</a>
 				<a href="login.jsp"><span class="glyphicon glyphicon-log-in">&nbsp;</span>LOGIN</a>
