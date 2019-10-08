@@ -6,6 +6,7 @@ Skilled People Employment Portal (SPEP) is a responsive web application which wi
 
 - Java
 - Apache Tomcat
+- Eclipse IDE
 
 ## Languages Used
 
